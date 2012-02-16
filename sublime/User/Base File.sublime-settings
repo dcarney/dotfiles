@@ -1,0 +1,7 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Merbivore.tmTheme",
+	"font_face": "inconsolata",
+	"font_size": 14,
+	"font_options": ["subpixel_antialias"],
+    	"rulers": [80]
+}
