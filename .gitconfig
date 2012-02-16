@@ -1,12 +1,17 @@
 [diff]
 	external = ~/scripts/git_diff_cmd.sh
 [url "https://"]
-        # corporate firewalls no like git
+	# corporate firewalls no like git
 	insteadOf = git://
 [github]
 	user = dcarney
 [alias]
 	unstage = reset HEAD
-        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	# pretty history
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	# Switch to a branch, creating it if necessary
+	go = checkout -B
+	# Undo a `git push`
+	undopush = push -f origin HEAD^:master
 [core]
 	editor = vim
