@@ -5,6 +5,9 @@ alias g='git'
 alias gs='c; git status'
 alias gss='c; git status -s'
 
+# File size
+alias fs="stat -f \"%z bytes\""
+
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
