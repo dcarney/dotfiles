@@ -3,6 +3,7 @@ alias ll='ls -al'
 alias c='clear'
 alias g='git'
 alias gs='c; git status'
+alias gss='c; git status -s'
 
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework

@@ -13,5 +13,8 @@
 	go = checkout -B
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
+        s = status
+        # short status
+        ss = status -s
 [core]
 	editor = vim
