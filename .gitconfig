@@ -1,0 +1,12 @@
+[diff]
+	external = ~/scripts/git_diff_cmd.sh
+[url "https://"]
+        # corporate firewalls no like git
+	insteadOf = git://
+[github]
+	user = dcarney
+[alias]
+	unstage = reset HEAD
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+[core]
+	editor = vim
