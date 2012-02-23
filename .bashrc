@@ -5,6 +5,8 @@ alias g='git'
 alias gs='c; git status'
 alias gss='c; git status -s'
 alias gd='git diff'
+alias ga='git add'
+alias ..='cd ..'
 
 # File size
 alias fs="stat -f \"%z bytes\""

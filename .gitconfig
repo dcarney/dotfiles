@@ -16,6 +16,7 @@
     # short status
     ss = status -s
     d = diff
+    a = add
 [core]
 	editor = vim
 [push]
