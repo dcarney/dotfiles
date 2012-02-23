@@ -1,7 +1,12 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Merbivore.tmTheme",
-	"font_face": "inconsolata",
-	"font_size": 14,
-	"font_options": ["subpixel_antialias"],
-    	"rulers": [80]
+    "color_scheme": "Packages/Color Scheme - Default/Merbivore.tmTheme",
+    "font_face": "inconsolata",
+    "font_size": 14,
+    "trim_trailing_white_space_on_save": true,
+    // Set to true to insert spaces when tab is pressed
+    "translate_tabs_to_spaces": true,
+    "draw_white_space": "selection",
+    "highlight_modified_tabs": true,
+    "font_options": ["subpixel_antialias"],
+    "rulers": [80]
 }
