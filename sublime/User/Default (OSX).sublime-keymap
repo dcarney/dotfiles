@@ -1,0 +1,4 @@
+[
+    // Command+L for 'go to line #'
+    { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} }
+]
