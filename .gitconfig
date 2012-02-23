@@ -9,12 +9,16 @@
 	unstage = reset HEAD
 	# pretty history
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	# Switch to a branch, creating it if necessary
-	go = checkout -B
+	go = checkout
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
-        s = status
-        # short status
-        ss = status -s
+    s = status
+    # short status
+    ss = status -s
+    d = diff
 [core]
 	editor = vim
+[push]
+    # 'git push' will push the current branch to its upstream branch
+	# see http://goo.gl/GLcPZ for details
+    default = upstream

@@ -1,9 +1,10 @@
 alias finder='open -a finder'
-alias ll='ls -al'                   
+alias ll='ls -al'
 alias c='clear'
 alias g='git'
 alias gs='c; git status'
 alias gss='c; git status -s'
+alias gd='git diff'
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -15,7 +16,7 @@ export CATALINA_HOME=/Library/Tomcat/Home
 export SVN_EDITOR=vim
 
 # add my junk to the PATH
-export PATH="$PATH":~/bin:~/scripts
+export PATH="$PATH":~/bin:~/scripts:~/script
 
 # set up pretty colors
 export CLICOLOR=1
@@ -54,7 +55,7 @@ export LSCOLORS=hxxxxxxxbxxxxxxxxxxxxx
 # x  default foreground or background
 
 # Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Make sure the virtualenvwrapper uses the correct Python version
 export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/2.7/bin/python
@@ -71,4 +72,19 @@ source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.s
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
 export PATH="$PATH":/Library/Frameworks/Python.framework/Versions/2.7/bin
+
+
+# http://henrik.nyh.se/2008/12/git-dirty-prompt
+#   username@machine dir[master]#   # clean working directory
+#   username@machine dir[master*]#  # dirty working directory
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
+}
+
+# sweet prompt, bro
+export PS1='\u@\h \[\033[0;37m\]\W\[\033[0m\]$(parse_git_branch)# '
+
 
