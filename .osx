@@ -3,3 +3,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Enable the 2D Dock
+defaults write com.apple.dock no-glass -bool true
