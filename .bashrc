@@ -7,6 +7,7 @@ alias gss='c; git status -s'
 alias gd='git diff'
 alias ga='git add'
 alias ..='cd ..'
+alias src='cd ~/src'
 
 # File size
 alias fs="stat -f \"%z bytes\""
@@ -16,6 +17,7 @@ export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
 export CATALINA_HOME=/Library/Tomcat/Home
 export SVN_EDITOR=vim
+export EDITOR=vim
 
 # add my junk to the PATH
 export PATH="$PATH":~/bin:~/scripts:~/script
@@ -75,6 +77,7 @@ source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.s
 # The orginal version is saved in .bash_profile.pysave
 export PATH="$PATH":/Library/Frameworks/Python.framework/Versions/2.7/bin
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # http://henrik.nyh.se/2008/12/git-dirty-prompt
 #   username@machine dir[master]#   # clean working directory
