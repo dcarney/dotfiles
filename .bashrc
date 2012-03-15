@@ -92,4 +92,6 @@ function parse_git_branch {
 # sweet prompt, bro
 export PS1='\u@\h \[\033[0;37m\]\W\[\033[0m\]$(parse_git_branch)# '
 
-
+# function for creating growl alerts from iTerm2 
+101 # Example:  something_long; growl "all done"
+102 growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
