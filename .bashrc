@@ -78,6 +78,10 @@ function parse_git_branch {
 # sweet prompt, bro
 export PS1='\u@\h \[\033[0;37m\]\W\[\033[0m\]$(parse_git_branch)# '
 
+# function for creating growl alerts from iTerm2 
+# Example:  something_long; growl "all done"
+growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
+
 # cheatsheet shortcuts!
 # Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
 function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
