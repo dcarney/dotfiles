@@ -6,6 +6,8 @@ alias gs='c; git status'
 alias gss='c; git status -s'
 alias gd='git diff'
 alias ga='git add'
+alias gr='git checkout --'
+alias gpom='git pull origin master'
 alias ..='cd ..'
 alias src='cd ~/src'
 
@@ -61,22 +63,6 @@ export LSCOLORS=hxxxxxxxbxxxxxxxxxxxxx
 # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# Make sure the virtualenvwrapper uses the correct Python version
-export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/2.7/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenv
-
-# use the virtualenvwrapper script
-export WORKON_HOME=$HOME/.virtualenvs
-source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-
-# Use virtualenv, but don't let it change the bash prompt
-# export VIRTUAL_ENV_DISABLE_PROMPT=1
-# source ~/.venv/base/bin/activate
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-export PATH="$PATH":/Library/Frameworks/Python.framework/Versions/2.7/bin
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # http://henrik.nyh.se/2008/12/git-dirty-prompt
@@ -92,4 +78,7 @@ function parse_git_branch {
 # sweet prompt, bro
 export PS1='\u@\h \[\033[0;37m\]\W\[\033[0m\]$(parse_git_branch)# '
 
+# cheatsheet shortcuts!
+# Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
+function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
 
