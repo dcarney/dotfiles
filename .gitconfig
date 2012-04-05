@@ -12,11 +12,19 @@
 	go = checkout
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
-    s = status
-    # short status
-    ss = status -s
-    d = diff
-    a = add
+   s = status
+   # short status
+   ss = status -s
+   d = diff
+   a = add
+   r = checkout --
+   pom = pull origin master
+
+[color]
+   diff = auto
+   status = auto
+   branch = auto
+
 [core]
 	editor = vim
 [push]
