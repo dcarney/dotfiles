@@ -16,3 +16,8 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
