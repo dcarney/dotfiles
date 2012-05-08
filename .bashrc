@@ -17,6 +17,9 @@ alias fs="stat -f \"%z bytes\""
 # increase the deafult bash history                                             
 HISTSIZE=1500
 
+# vi mode!
+set -o vi
+
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
