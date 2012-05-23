@@ -8,6 +8,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gr='git checkout --'
 alias gpom='git pull origin master'
+alias gprom='git pull --rebase origin master'
 alias ..='cd ..'
 alias src='cd ~/src'
 
@@ -23,9 +24,8 @@ set -o vi
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
-export CATALINA_HOME=/Library/Tomcat/Home
-export SVN_EDITOR=vim
 export EDITOR=vim
+export HADOOP=/usr/local/Cellar/hadoop/1.0.1/libexec
 
 # add my junk to the PATH
 export PATH="$PATH":~/bin:~/scripts:~/script
@@ -91,4 +91,12 @@ growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 # cheatsheet shortcuts!
 # Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
 function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
+
+# dead-simple process control 
+# Ex. 'start foobar' will exec ~/bin/start/foobar  
+function start () { ~/bin/start/$*; }
+function stop () { ~/bin/stop/$*; }
+
+# because I'm forgetful/lazy
+function me() { echo '7338372'; }
 
