@@ -25,7 +25,7 @@ export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
 export EDITOR=vim
-export HADOOP=/usr/local/Cellar/hadoop/1.0.1/libexec
+export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
 
 # add my junk to the PATH
 export PATH="$PATH":~/bin:~/scripts:~/script
