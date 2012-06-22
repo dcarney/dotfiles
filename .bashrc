@@ -1,5 +1,5 @@
 alias finder='open -a finder'
-alias ll='ls -al'
+alias ll='ls -alh'
 alias c='clear'
 alias g='git'
 alias gs='c; git status'
