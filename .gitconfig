@@ -1,33 +1,33 @@
-[diff]
-	external = ~/scripts/git_diff_cmd.sh
+[difftool]
+  external = ~/script/git_diff_cmd.sh
 [url "https://"]
-	# corporate firewalls no like git
-	insteadOf = git://
+  # corporate firewalls no like git
+  insteadOf = git://
 [github]
-	user = dcarney
+  user = dcarney
 [alias]
-	unstage = reset HEAD
-	# pretty history
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	go = checkout
-	# Undo a `git push`
-	undopush = push -f origin HEAD^:master
-   s = status
-   # short status
-   ss = status -s
-   d = diff
-   a = add
-   r = checkout --
-   pom = pull origin master
-
+  unstage = reset HEAD
+  # pretty history
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  go = checkout
+  # Undo a `git push`
+  undopush = push -f origin HEAD^:master
+  s = status
+  # short status
+  ss = status -s
+  d = diff
+  dt = difftool
+  a = add
+  r = checkout --
+  pom = pull origin master
+  prom = pull --rebase origin master
 [color]
-   diff = auto
-   status = auto
-   branch = auto
-
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	editor = vim
+  editor = vim
 [push]
-    # 'git push' will push the current branch to its upstream branch
-	# see http://goo.gl/GLcPZ for details
-    default = upstream
+  # 'git push' will push the current branch to its upstream branch
+  # see http://goo.gl/GLcPZ for details
+  default = upstream
