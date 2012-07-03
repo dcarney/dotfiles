@@ -26,8 +26,6 @@ set -o vi
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
-export CATALINA_HOME=/Library/Tomcat/Home
-export SVN_EDITOR=vim
 export EDITOR=vim
 export GUI_EDITOR=mvim
 export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
