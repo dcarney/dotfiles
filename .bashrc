@@ -5,17 +5,19 @@ alias g='git'
 alias gs='c; git status'
 alias gss='c; git status -s'
 alias gd='git diff'
+alias gdt='git difftool'
 alias ga='git add'
 alias gr='git checkout --'
 alias gpom='git pull origin master'
 alias gprom='git pull --rebase origin master'
 alias ..='cd ..'
 alias src='cd ~/src'
+alias relev='cd ~/src/relevancy'
+alias hist='history'
+alias untar='tar xvfz'
+alias fs="stat -f \"%z bytes\"" # File size  
 
-# File size
-alias fs="stat -f \"%z bytes\""
-
-# increase the deafult bash history                                             
+# increase the deafult bash history
 HISTSIZE=1500
 
 # vi mode!
@@ -24,7 +26,10 @@ set -o vi
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
+export CATALINA_HOME=/Library/Tomcat/Home
+export SVN_EDITOR=vim
 export EDITOR=vim
+export GUI_EDITOR=mvim
 export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
 
 # add my junk to the PATH
@@ -71,6 +76,11 @@ export LSCOLORS=hxxxxxxxbxxxxxxxxxxxxx
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+# Load bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
 # http://henrik.nyh.se/2008/12/git-dirty-prompt
 #   username@machine dir[master]#   # clean working directory
 #   username@machine dir[master*]#  # dirty working directory
@@ -90,13 +100,11 @@ growl() { echo -e $'\e]9;'${1}'\007' ; return ; }
 
 # cheatsheet shortcuts!
 # Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
-function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
+function cheat () { $GUI_EDITOR ~/doc/cheat/$*.txt; }
 
-# dead-simple process control 
-# Ex. 'start foobar' will exec ~/bin/start/foobar  
+# dead-simple process control
 function start () { ~/bin/start/$*; }
 function stop () { ~/bin/stop/$*; }
 
 # because I'm forgetful/lazy
 function me() { echo '7338372'; }
-
