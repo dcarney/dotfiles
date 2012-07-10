@@ -1,6 +1,10 @@
 colorscheme molokai
 set guifont=Inconsolata:h14
 
+" Show certain invisible whitespace chars (ala TextMate)
+set list
+set listchars=tab:▸\ ,eol:¬
+
 " Set syntax highlighting to always on
 syntax enable
 
@@ -20,6 +24,7 @@ set go-=R
 " ----------------------------------------------------------------------------
 "  Text Formatting
 " ----------------------------------------------------------------------------
+set ts=2                   " 2 space 'tabs'
 set expandtab              " expand tabs to spaces
 set nosmarttab             " tabs are dumb
 
@@ -43,3 +48,17 @@ endif
 " ----------------------------------------------------------------------------
 " shorter than typing :NERDTree and :NERDTreeClose
 map <F2> :NERDTreeToggle<CR>
+
+" ----------------------------------------------------------------------------
+" Vundle config
+" ----------------------------------------------------------------------------
+set nocompatible               " be iMproved
+filetype off " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle (required!) 
+Bundle 'gmarik/vundle' 
+
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+filetype plugin indent on  " required!  
