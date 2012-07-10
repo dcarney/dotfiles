@@ -1,10 +1,6 @@
 colorscheme molokai
 set guifont=Inconsolata:h14
 
-" Show certain invisible whitespace chars (ala TextMate)
-set list
-set listchars=tab:▸\ ,eol:¬
-
 " Set syntax highlighting to always on
 syntax enable
 
@@ -24,9 +20,22 @@ set go-=R
 " ----------------------------------------------------------------------------
 "  Text Formatting
 " ----------------------------------------------------------------------------
+" Show certain invisible whitespace chars (ala TextMate)
+set list
+set listchars=tab:▸\       " also sometimes helpful: eol:¬
 set ts=2                   " 2 space 'tabs'
 set expandtab              " expand tabs to spaces
 set nosmarttab             " tabs are dumb
+
+" Highlight trailing whitespace in red:
+"   - create color scheme to use to highlight trailing whitespace in red
+"   - have this highlighting not appear whilst you are typing in insert mode
+"   - have the highlighting of whitespace apply when you open new buffers
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 " ----------------------------------------------------------------------------
 "  UI
@@ -44,10 +53,12 @@ if exists('+colorcolumn')
 endif
 
 " ----------------------------------------------------------------------------
-"  NERDTree plugin
+" Key Mappings 
 " ----------------------------------------------------------------------------
-" shorter than typing :NERDTree and :NERDTreeClose
-map <F2> :NERDTreeToggle<CR>
+" double-backtick activates the scratch.vim plugin in visual and normal modes
+nnoremap `` :Sscratch<CR>
+vnoremap `` :Sscratch<CR>
+map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 
 " ----------------------------------------------------------------------------
 " Vundle config
