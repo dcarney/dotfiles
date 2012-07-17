@@ -1,5 +1,6 @@
 alias finder='open -a finder'
 alias ll='ls -alh'
+alias lll='ls -lasht'
 alias c='clear'
 alias g='git'
 alias gs='c; git status'
@@ -8,6 +9,7 @@ alias gd='git diff'
 alias gdt='git difftool'
 alias ga='git add'
 alias gr='git checkout --'
+alias gpr='git pr'
 alias gpom='git pull origin master'
 alias gprom='git pull --rebase origin master'
 alias ..='cd ..'
@@ -15,7 +17,8 @@ alias src='cd ~/src'
 alias relev='cd ~/src/relevancy'
 alias hist='history'
 alias untar='tar xvfz'
-alias fs="stat -f \"%z bytes\"" # File size  
+alias fs="stat -f \"%z bytes\"" # File size
+alias please='sudo'
 
 # increase the deafult bash history
 HISTSIZE=1500
@@ -23,6 +26,7 @@ HISTSIZE=1500
 # vi mode!
 set -o vi
 
+export WORKON_HOME=~/src/virtualenvs
 export ANT_HOME=/usr/local/ant
 export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
 export JAVA_HOME=/Library/Java/Home
@@ -106,3 +110,4 @@ function stop () { ~/bin/stop/$*; }
 
 # because I'm forgetful/lazy
 function me() { echo '7338372'; }
+
