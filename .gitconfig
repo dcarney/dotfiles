@@ -20,6 +20,7 @@
   a = add
   r = checkout --
   pom = pull origin master
+  pr = pull --rebase      
   prom = pull --rebase origin master
 [color]
   diff = auto
