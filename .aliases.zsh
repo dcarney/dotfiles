@@ -20,3 +20,4 @@ alias hist='history'
 alias untar='tar xvfz'
 alias fs="stat -f \"%z bytes\"" # File size
 alias please='sudo'
+
