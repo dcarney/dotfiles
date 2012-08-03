@@ -21,3 +21,5 @@ alias untar='tar xvfz'
 alias fs="stat -f \"%z bytes\"" # File size
 alias please='sudo'
 
+# prevent zsh autocorrection on the following:
+alias ssh='nocorrect ssh'
