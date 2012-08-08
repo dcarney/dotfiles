@@ -1,5 +1,5 @@
 # vi mode!
-set -o vi
+bindkey -v
 
 # lets files beginning with a . be matched w/o explicitly specifying the dot
 setopt globdots

@@ -11,9 +11,6 @@ ZSH_THEME="fishy"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# source every .zsh file (including hidden file and symlinks) in my home dir
-for config_file ($HOME/*.zsh(D)) source $config_file
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -36,4 +33,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# sourcing custom files works best AFTER the above oh-my-zsh source
+#
+# source every .zsh file (including hidden file and symlinks) in my home dir
+for config_file ($HOME/*.zsh(D)) source $config_file
