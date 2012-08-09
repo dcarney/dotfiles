@@ -21,6 +21,7 @@ alias hist='history'
 alias untar='tar xvfz'
 alias fs="stat -f \"%z bytes\"" # File size
 alias please='sudo'
-
+alias head='head -n 10'
+alias tail='tail -n 10'
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
