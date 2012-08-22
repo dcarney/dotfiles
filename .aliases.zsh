@@ -26,3 +26,4 @@ alias head='head -n 10'
 alias tail='tail -n 10'
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
+alias tmux='nocorrect tmux'
