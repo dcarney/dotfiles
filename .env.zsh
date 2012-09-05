@@ -1,6 +1,9 @@
 # vi mode!
 bindkey -v
 
+# turn off annoying bells
+setopt nobeep
+
 # lets files beginning with a . be matched w/o explicitly specifying the dot
 setopt globdots
 
