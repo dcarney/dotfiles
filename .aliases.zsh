@@ -18,6 +18,7 @@ alias src='cd ~/src'
 alias api='cd ~/src/relevancy_api'
 alias backend='cd ~/src/relevancy_backend'
 alias hist='history'
+alias h='history'
 alias untar='tar xvfz'
 alias tarball='tar -pvczf'
 alias fs="stat -f \"%z bytes\"" # File size
