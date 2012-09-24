@@ -18,3 +18,5 @@ export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
 
 # add my junk to the PATH
 export PATH="$PATH":~/bin:~/scripts:~/script
+
+export TERM=xterm-256color
