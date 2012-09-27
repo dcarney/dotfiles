@@ -24,6 +24,7 @@ alias backend='cd ~/src/relevancy_backend'
 alias hist='history'
 alias h='history'
 alias untar='tar xvfz'
+alias unjar='jar xvf'
 alias tarball='tar -pvczf'
 alias fs="stat -f \"%z bytes\"" # File size
 alias please='sudo'
