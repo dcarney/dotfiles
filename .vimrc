@@ -65,6 +65,9 @@ nnoremap `` :Sscratch<CR>
 vnoremap `` :Sscratch<CR>
 map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 
+" easier buffer switching
+nnoremap <F5> :buffers<CR>:buffer<Space>
+
 " ----------------------------------------------------------------------------
 " Vundle config
 " ----------------------------------------------------------------------------
