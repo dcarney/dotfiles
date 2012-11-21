@@ -20,8 +20,11 @@
   a = add
   r = checkout --
   pom = pull origin master
-  pr = pull --rebase      
+  pr = pull --rebase
   prom = pull --rebase origin master
+  branches = branch -a
+  # works in conjunction with the above 'hist' alias
+  showlast = show HEAD
 [color]
   diff = auto
   status = auto
