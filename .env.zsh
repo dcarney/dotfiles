@@ -19,4 +19,15 @@ export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
 # add my junk to the PATH
 export PATH="$PATH":~/bin:~/scripts:~/script
 
+# set up GNU coreutils:
+#
+# by default, all commands are installed with the prefix 'g'.
+# If you really need to use these commands with their normal names, you
+# can add a "gnubin" directory to your PATH from your bashrc like:
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+# Additionally, you can access their man pages with normal names if you add
+# the "gnuman" directory to your MANPATH from your bashrc as well:
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 export TERM=xterm-256color
