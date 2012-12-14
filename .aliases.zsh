@@ -32,6 +32,16 @@ alias fs="stat -f \"%z bytes\"" # File size
 alias please='sudo'
 alias head='head -n 10'
 alias tail='tail -n 10'
+alias xx='exit'
+
+# build w/ 1 thread/core
+alias mvn='mvn -T 1C'
+
+# produce a "stream" of iostats output
+alias stats='iostat -w1'
+
+# use htop instead of the crappy OSX top
+alias top='htop'
 
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
