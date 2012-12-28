@@ -43,6 +43,10 @@ alias stats='iostat -w1'
 # use htop instead of the crappy OSX top
 alias top='htop'
 
+# run a script to find the OSX equivalent of ssh-agent, set an env var
+# in the current shell environment
+alias fixssh='. ~/bin/fix_osx_auth_sock'
+
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
 alias tmux='nocorrect tmux'
