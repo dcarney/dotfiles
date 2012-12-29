@@ -25,6 +25,7 @@
   branches = branch -a
   # works in conjunction with the above 'hist' alias
   showlast = show HEAD
+  showstash = stash show -p
 [color]
   diff = auto
   status = auto
