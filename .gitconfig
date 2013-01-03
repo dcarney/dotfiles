@@ -23,6 +23,7 @@
   pr = pull --rebase
   prom = pull --rebase origin master
   branches = branch -a
+  tags = tag -l
   # works in conjunction with the above 'hist' alias
   showlast = show HEAD
   showstash = stash show -p
