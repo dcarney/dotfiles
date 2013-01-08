@@ -10,11 +10,9 @@
   # pretty history
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   go = checkout
-  # Undo a `git push`
   undopush = push -f origin HEAD^:master
   s = status
-  # short status
-  ss = status -s
+  ss = status -s  # short status
   d = diff
   dt = difftool
   a = add
@@ -24,9 +22,10 @@
   prom = pull --rebase origin master
   branches = branch -a
   tags = tag -l
-  # works in conjunction with the above 'hist' alias
   showlast = show HEAD
   showstash = stash show -p
+  unpushed = log origin..HEAD --pretty=oneline
+  unpulled = !git fetch origin --quiet && git log HEAD..origin --pretty=oneline
 [color]
   diff = auto
   status = auto
