@@ -17,7 +17,7 @@ export GUI_EDITOR=mvim
 export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
 
 # add my junk to the PATH
-export PATH="$PATH":~/bin:~/scripts:~/script
+export PATH=/usr/local/bin:"$PATH":~/bin:~/scripts:~/script
 
 # set up GNU coreutils:
 #
@@ -31,3 +31,6 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export TERM=xterm-256color
+
+# enable shims in rbenv
+eval "$(rbenv init -)"
