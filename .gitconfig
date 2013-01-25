@@ -14,6 +14,7 @@
   s = status
   ss = status -s  # short status
   d = diff
+  dc = diff --cached
   dt = difftool
   a = add
   r = checkout --
@@ -22,6 +23,8 @@
   prom = pull --rebase origin master
   branches = branch -a
   tags = tag -l
+  stashes = stash list
+  remotes = remote -v 
   showlast = show HEAD
   showstash = stash show -p
   unpushed = log origin..HEAD --pretty=oneline
