@@ -1,16 +1,12 @@
-colorscheme molokai
-set guifont=Inconsolata:h14
-
-" Set syntax highlighting to always on
-syntax enable
-
-" Set automatic filetype detection to on
-filetype on
-
 " ----------------------------------------------------------------------------
 " Misc
 " ----------------------------------------------------------------------------
-set vb  " set visualbell, to silence the annoying audible bell
+syntax enable       " Set syntax highlighting to always on
+filetype on         " Set automatic filetype detection to on
+set hlsearch        " Show highlighting on search matches
+set vb              " set visualbell, to silence the annoying audible bell
+colorscheme molokai
+set guifont=Inconsolata:h14
 
 " ----------------------------------------------------------------------------
 "  MacVim
@@ -58,7 +54,7 @@ if exists('+colorcolumn')
 endif
 
 " ----------------------------------------------------------------------------
-" Key Mappings 
+" Key Mappings
 " ----------------------------------------------------------------------------
 " double-backtick activates the scratch.vim plugin in visual and normal modes
 nnoremap `` :Sscratch<CR>
@@ -68,6 +64,9 @@ map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 " easier buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
+" hitting <Ctrl+h> clears last search highlighting
+nnoremap <C-h> :nohlsearch<return>
+
 " ----------------------------------------------------------------------------
 " Vundle config
 " ----------------------------------------------------------------------------
@@ -76,8 +75,8 @@ filetype off " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle (required!) 
-Bundle 'gmarik/vundle' 
+" let Vundle manage Vundle (required!)
+Bundle 'gmarik/vundle'
 
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-filetype plugin indent on  " required!  
+filetype plugin indent on  " required!
