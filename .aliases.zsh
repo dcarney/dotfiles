@@ -23,7 +23,6 @@ alias h='history'
 alias hgrep='history | grep'
 alias untar='tar xvfz'
 alias unjar='jar xvf'
-alias tarball='tar -pvczf'
 alias fs="stat -f \"%z bytes\"" # File size
 alias please='sudo'
 alias head='head -n 10'

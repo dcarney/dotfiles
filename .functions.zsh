@@ -9,6 +9,13 @@ function me() { echo '7338372'; }
 # Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
 function cheat () { $GUI_EDITOR ~/doc/cheat/$*.txt; }
 
+# Ex. tarball ./foo  => foo.tar.gz
+function tarball_fn() {
+  tar -pvczf "${1}.tar.gz" "$@";
+}
+
+alias tarball=tarball_fn
+
 # shameslessly copied from the oh-my-zsh plugin
 #
 # Will return the current branch name
