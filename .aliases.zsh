@@ -42,6 +42,9 @@ alias top='htop'
 # in the current shell environment
 alias fixssh='. ~/bin/fix_osx_auth_sock'
 
+# list available rubies
+alias rubies='ruby-build --definitions'
+
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
 alias tmux='nocorrect tmux'
