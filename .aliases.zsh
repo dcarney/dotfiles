@@ -45,6 +45,7 @@ alias fixssh='. ~/bin/fix_osx_auth_sock'
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
 alias tmux='nocorrect tmux'
+alias rbenv='nocorrect rbenv'
 
 # global aliases
 alias -g L="| less"
