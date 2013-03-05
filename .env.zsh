@@ -7,6 +7,9 @@ setopt nobeep
 # lets files beginning with a . be matched w/o explicitly specifying the dot
 setopt globdots
 
+# /usr/local instead of 'cd /usr/local', .. instead of 'cd ..', etc.
+setopt auto_cd
+
 # env vars
 export WORKON_HOME=~/src/virtualenvs
 export ANT_HOME=/usr/local/ant
