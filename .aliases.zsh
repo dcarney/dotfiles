@@ -18,6 +18,7 @@ alias src='cd ~/src'
 alias api='cd ~/src/relevancy_api'
 alias backend='cd ~/src/relevancy_backend'
 alias conf='cd ~/src/relevancy_conf'
+alias lib='cd ~/src/java_libraries'
 alias hist='history'
 alias h='history'
 alias hgrep='history | grep'
@@ -37,6 +38,9 @@ alias stats='iostat -w1'
 
 # use htop instead of the crappy OSX top
 alias top='htop'
+
+# run my janky fixssh script before attempting any ssh
+alias ssh='fixssh; ssh'
 
 # run a script to find the OSX equivalent of ssh-agent, set an env var
 # in the current shell environment
