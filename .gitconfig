@@ -24,11 +24,12 @@
   branches = branch -a
   tags = tag -l
   stashes = stash list
-  remotes = remote -v 
+  remotes = remote -v
   showlast = show HEAD
   showstash = stash show -p
   unpushed = log origin..HEAD --pretty=oneline
   unpulled = !git fetch origin --quiet && git log HEAD..origin --pretty=oneline
+  rhh = reset --hard HEAD
 [color]
   diff = auto
   status = auto
