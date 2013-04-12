@@ -10,6 +10,9 @@ setopt globdots
 # /usr/local instead of 'cd /usr/local', .. instead of 'cd ..', etc.
 setopt auto_cd
 
+# load the super-handy zmv fn
+autoload -U zmv
+
 # env vars
 export WORKON_HOME=~/src/virtualenvs
 export ANT_HOME=/usr/local/ant
@@ -21,6 +24,7 @@ export HADOOP=/usr/local/Cellar/hadoop/1.0.3/libexec
 export CASSANDRA_HOME=/usr/local/Cellar/cassandra/1.1.7/
 # add my junk to the PATH
 export PATH=/usr/local/bin:"$PATH":~/bin:~/scripts:~/script
+export R_HOME=/Library/Frameworks/R.framework/Resources
 
 # set up GNU coreutils:
 #

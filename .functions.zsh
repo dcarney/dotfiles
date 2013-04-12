@@ -7,7 +7,7 @@ function me() { echo '7338372'; }
 
 # cheatsheet shortcuts!
 # Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
-function cheat () { $GUI_EDITOR ~/doc/cheat/$*.txt; }
+function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
 
 # Ex. tarball ./foo  => foo.tar.gz
 function tarball_fn() {
