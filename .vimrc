@@ -23,7 +23,6 @@ set go-=R
 " ----------------------------------------------------------------------------
 " Show certain invisible whitespace chars (ala TextMate)
 set list
-set listchars=tab:▸\       " also sometimes helpful: eol:¬
 set ts=2                   " 2 space 'tabs'
 set expandtab              " expand tabs to spaces
 set nosmarttab             " tabs are dumb
