@@ -29,6 +29,7 @@ alias please='sudo'
 alias head='head -n 10'
 alias tail='tail -n 10'
 alias xx='exit'
+alias watchdir='watch -n 5 "ls -lasht"'
 
 # build w/ 1 thread/core
 alias mvn='mvn -T 1C'

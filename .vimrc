@@ -22,7 +22,8 @@ set go-=R
 "  Text Formatting
 " ----------------------------------------------------------------------------
 " Show certain invisible whitespace chars (ala TextMate)
-set list
+set nolist                 " show whitespace? list/nolist
+" set list listchars=tab:».  " show tabs as (Ctrl-K >>)
 set ts=2                   " 2 space 'tabs'
 set expandtab              " expand tabs to spaces
 set nosmarttab             " tabs are dumb
@@ -53,7 +54,7 @@ if exists('+colorcolumn')
 endif
 
 " ----------------------------------------------------------------------------
-" Key Mappings
+" Key Mappings / Command abbrevs
 " ----------------------------------------------------------------------------
 " double-backtick activates the scratch.vim plugin in visual and normal modes
 nnoremap `` :Sscratch<CR>
@@ -65,6 +66,17 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " hitting <Ctrl+h> clears last search highlighting
 nnoremap <C-h> :nohlsearch<return>
+
+" delete trailing whitespace with :ws
+cabbrev ws %s/\s\+$//g
+
+" ----------------------------------------------------------------------------
+" Macros
+"   NOTE: to enter an <ESC> in the macro, use the ^[ char (CTRL-V ESC), or
+"         use \e and double quote the macro
+" ----------------------------------------------------------------------------
+" comment out a line with '# '
+let @c="i# \e0j"
 
 " ----------------------------------------------------------------------------
 " Vundle config
