@@ -13,6 +13,11 @@ setopt auto_cd
 # load the super-handy zmv fn
 autoload -U zmv
 
+# set up cmd line editing using $EDITOR
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # env vars
 export WORKON_HOME=~/src/virtualenvs
 export ANT_HOME=/usr/local/ant
