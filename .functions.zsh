@@ -30,3 +30,10 @@ function current_repository() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo $(git remote -v | cut -d':' -f 2)
 }
+
+function git_publish() {
+  # git pull --rebase origin foobar && git push origin foobar
+  gpr origin `current_branch` && g push origin `current_branch`
+}
+
+alias gpub=git_publish
