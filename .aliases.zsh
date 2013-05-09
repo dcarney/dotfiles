@@ -37,9 +37,6 @@ alias mvn='mvn -T 1C'
 # produce a "stream" of iostats output
 alias stats='iostat -w1'
 
-# use htop instead of the crappy OSX top
-alias top='htop'
-
 # run my janky fixssh script before attempting any ssh
 alias ssh='fixssh; ssh'
 

@@ -16,6 +16,12 @@ function tarball_fn() {
 
 alias tarball=tarball_fn
 
+function topgrep_fn() {
+  top -c -p `pgrep -d, -f ${1}`;
+}
+
+alias topgrep=topgrep_fn
+
 # shameslessly copied from the oh-my-zsh plugin
 #
 # Will return the current branch name
