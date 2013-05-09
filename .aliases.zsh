@@ -57,6 +57,7 @@ alias rbenv='nocorrect rbenv'
 alias pstree='nocorrect pstree'
 alias pgrep='nocorrect pgrep'
 alias cap='nocorrect cap'
+alias node='nocorrect node'
 
 # global aliases
 alias -g L="| less"
