@@ -59,3 +59,12 @@ alias node='nocorrect node'
 # global aliases
 alias -g L="| less"
 alias -g NUL="> /dev/null 2>&1"
+
+# suffix aliases (aka "open with")
+alias -s coffee=vim
+alias -s js=vim
+alias -s txt=vim
+alias -s json=vim
+alias -s csv=subl
+alias -s sh=vim
+alias -s log='tail -f'
