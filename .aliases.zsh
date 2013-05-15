@@ -66,5 +66,4 @@ alias -s js=vim
 alias -s txt=vim
 alias -s json=vim
 alias -s csv=subl
-alias -s sh=vim
 alias -s log='tail -f'
