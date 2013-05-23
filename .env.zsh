@@ -25,7 +25,7 @@ export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
 export EDITOR=vim
 export GUI_EDITOR=mvim
 # add my junk to the PATH
-export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/bin:~/scripts:~/script
+export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
