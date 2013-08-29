@@ -50,7 +50,6 @@ alias rubies='ruby-build --definitions'
 # prevent zsh autocorrection on the following:
 alias ssh='nocorrect ssh'
 alias tmux='nocorrect tmux'
-alias rbenv='nocorrect rbenv'
 alias pstree='nocorrect pstree'
 alias pgrep='nocorrect pgrep'
 alias cap='nocorrect cap'
@@ -62,7 +61,6 @@ alias -g NUL="> /dev/null 2>&1"
 
 # suffix aliases (aka "open with")
 alias -s coffee=vim
-alias -s js=vim
 alias -s txt=vim
 alias -s json=vim
 alias -s csv=subl
