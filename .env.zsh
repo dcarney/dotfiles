@@ -19,17 +19,20 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 # env vars
-export WORKON_HOME=~/src/virtualenvs
+export WORKON_HOME=~/virtualenvs
 export ANT_HOME=/usr/local/ant
+export GOROOT=/usr/local/go
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
 export EDITOR=vim
 export GUI_EDITOR=mvim
+
 # add my junk to the PATH
-export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script
+export PATH=/usr/local/bin:/usr/local/sbin:"$GOROOT/bin":"$GOPATH/bin":"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
   export R_HOME=/usr/lib/R
+  export JAVA_HOME=/usr/local/java/jdk1.7.0_21/
 else
   # has to be OSX then (for me anyway)
   export R_HOME=/Library/Frameworks/R.framework/Resources
@@ -53,3 +56,6 @@ export TERM=xterm-256color
 
 # enable shims in rbenv
 eval "$(rbenv init -)"
+
+# enable virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh
