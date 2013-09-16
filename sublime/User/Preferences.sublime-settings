@@ -22,5 +22,8 @@
     // remember_open_files makes the application start up with the last set of
     // open files. Changing this to false will have no effect if hot_exit is
     // true
-    "remember_open_files": false
+    "remember_open_files": false,
+
+    // Don't you dare edit a crontab w/o putting a newline at the end, sucka!
+    "ensure_newline_at_eof_on_save": true
 }
