@@ -25,5 +25,8 @@
     "remember_open_files": false,
 
     // Don't you dare edit a crontab w/o putting a newline at the end, sucka!
-    "ensure_newline_at_eof_on_save": true
+    "ensure_newline_at_eof_on_save": true,
+
+    // Show ye olde 80-column margin
+    "rulers": [80]
 }
