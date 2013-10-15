@@ -28,6 +28,7 @@ export GUI_EDITOR=mvim
 
 # add my junk to the PATH
 export PATH=/usr/local/bin:/usr/local/sbin:"$GOROOT/bin":"$GOPATH/bin":"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
@@ -49,7 +50,6 @@ else
 
   # Additionally, you can access their man pages with normal names if you add
   # the "gnuman" directory to your MANPATH from your bashrc as well:
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 export TERM=xterm-256color
