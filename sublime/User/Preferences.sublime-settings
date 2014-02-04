@@ -1,32 +1,24 @@
 {
-    "color_scheme": "Packages/Color Scheme - Default/Merbivore.tmTheme",
-    "font_face": "inconsolata",
-    "font_size": 14,
-    "trim_trailing_white_space_on_save": true,
-    // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
-    "draw_white_space": "selection",
-    "highlight_modified_tabs": true,
-    "font_options": ["subpixel_antialias"],
-    "rulers": [80],
-
-    // Exiting the application with hot_exit enabled will cause it to close
-    // immediately without prompting. Unsaved modifications and open files will
-    // be preserved and restored when next starting.
-    //
-    // Closing a window with an associated project will also close the window
-    // without prompting, preserving unsaved changes in the workspace file
-    // alongside the project.
-    "hot_exit": false,
-
-    // remember_open_files makes the application start up with the last set of
-    // open files. Changing this to false will have no effect if hot_exit is
-    // true
-    "remember_open_files": false,
-
-    // Don't you dare edit a crontab w/o putting a newline at the end, sucka!
-    "ensure_newline_at_eof_on_save": true,
-
-    // Show ye olde 80-column margin
-    "rulers": [80]
+	"color_scheme": "Packages/Color Scheme - Default/Merbivore.tmTheme",
+	"draw_white_space": "selection",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "inconsolata",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_open_files": false,
+	"rulers":
+	[
+		80
+	],
+	"show_full_path": false,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
 }
