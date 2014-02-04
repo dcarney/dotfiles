@@ -28,12 +28,21 @@ export GUI_EDITOR=mvim
 
 # add my junk to the PATH
 export PATH=/usr/local/bin:/usr/local/sbin:"$GOROOT/bin":"$GOPATH/bin":"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu
+export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
   export R_HOME=/usr/lib/R
-  export JAVA_HOME=/usr/local/java/jdk1.7.0_21/
+  export JAVA_HOME=/usr/local/java/jdk1.7.0_45/
+
+  export HADOOP_HOME=/usr/local/hadoop
+  export HADOOP_INSTALL=/usr/local/hadoop
+  export PATH=$PATH:$HADOOP_INSTALL/bin
+  export PATH=$PATH:$HADOOP_INSTALL/sbin
+  export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+  export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+  export HADOOP_HDFS_HOME=$HADOOP_INSTALL
+  export YARN_HOME=$HADOOP_INSTALL
 else
   # has to be OSX then (for me anyway)
   export R_HOME=/Library/Frameworks/R.framework/Resources
