@@ -43,3 +43,9 @@ function git_publish() {
 }
 
 alias gpub=git_publish
+
+function unavro_fn() {
+  java -jar ~/lib/avro-tools-1.7.4.jar tojson $@
+}
+
+alias unavro=unavro_fn
