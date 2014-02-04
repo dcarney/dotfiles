@@ -34,8 +34,8 @@ alias watchdir='watch -n 5 "ls -lasht"'
 # mimic the OSX "open" command
 alias open='xdg-open'
 
-# build w/ 1 thread/core
-alias mvn='mvn -T 1C'
+# build w/ 2 threads/core
+alias mvn='mvn -T 2C'
 
 # produce a "stream" of iostats output
 alias stats='iostat -w1'
