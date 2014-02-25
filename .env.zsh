@@ -33,7 +33,7 @@ export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
   export R_HOME=/usr/lib/R
-  export JAVA_HOME=/usr/local/java/jdk1.7.0_45/
+  export JAVA_HOME=/usr/local/java/jdk1.7.0_51/
 
   export HADOOP_HOME=/usr/local/hadoop
   export HADOOP_INSTALL=/usr/local/hadoop
