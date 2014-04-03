@@ -30,6 +30,8 @@ alias head='head -n 10'
 alias tail='tail -n 10'
 alias xx='exit'
 alias watchdir='watch -n 5 "ls -lasht"'
+alias idgaf="echo \"¯\_(ツ)_/¯\""
+alias files="nemo"
 
 # mimic the OSX "open" command
 alias open='xdg-open'
