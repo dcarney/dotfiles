@@ -1,4 +1,3 @@
-alias finder='open -a finder'
 alias ll='ls -alh'
 alias lll='ls -lasht'
 alias c='clear'
@@ -35,21 +34,10 @@ alias buildin="echo '\nᕕ( ᐛ )ᕗ  buildin...\n'; ./deploy"
 alias files="nemo"
 alias ipy="ipython"
 alias proc_on_port="sudo netstat -nlp | grep"
-# mimic the OSX "open" command
 alias open='xdg-open'
 
 # build w/ 2 threads/core
 alias mvn='mvn -T 2C'
-
-# produce a "stream" of iostats output
-alias stats='iostat -w1'
-
-# run my janky fixssh script before attempting any ssh
-alias ssh='fixssh; ssh'
-
-# run a script to find the OSX equivalent of ssh-agent, set an env var
-# in the current shell environment
-alias fixssh='. ~/bin/fix_osx_auth_sock'
 
 # list available rubies
 alias rubies='ruby-build --definitions'

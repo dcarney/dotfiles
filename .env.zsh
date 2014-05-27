@@ -27,39 +27,20 @@ export EDITOR=vim
 export GUI_EDITOR=mvim
 
 # add my junk to the PATH
-export PATH=/usr/local/bin:/usr/local/sbin:"$GOROOT/bin":"$GOPATH/bin":"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script
+export PATH=/usr/local/bin:/usr/local/sbin:"$GOROOT/bin":"$GOPATH/bin":"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/bdutil:~/bin/google-cloud-sdk/bin
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 
-unamestr=`uname`
-if [[ "$unamestr" == 'Linux' ]]; then
-  export R_HOME=/usr/lib/R
-  export JAVA_HOME=/usr/local/java/jdk1.7.0_51/
+export R_HOME=/usr/lib/R
+export JAVA_HOME=/usr/local/java/jdk1.7.0_51/
 
-  export HADOOP_HOME=/usr/local/hadoop
-  export HADOOP_INSTALL=/usr/local/hadoop
-  export PATH=$PATH:$HADOOP_INSTALL/bin
-  export PATH=$PATH:$HADOOP_INSTALL/sbin
-  export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
-  export HADOOP_COMMON_HOME=$HADOOP_INSTALL
-  export HADOOP_HDFS_HOME=$HADOOP_INSTALL
-  export YARN_HOME=$HADOOP_INSTALL
-else
-  # has to be OSX then (for me anyway)
-  export R_HOME=/Library/Frameworks/R.framework/Resources
-  export JDK_HOME=/System/Library/Frameworks/JavaVM.framework
-  export HADOOP_HOME=/usr/local/Cellar/hadoop/1.1.2/libexec
-  export HIVE_HOME=/usr/local/Cellar/hive/0.10.0/libexec
-  export CASSANDRA_HOME=/usr/local/Cellar/cassandra/1.1.7/
-  # set up GNU coreutils:
-  #
-  # by default, all commands are installed with the prefix 'g'.
-  # If you really need to use these commands with their normal names, you
-  # can add a "gnubin" directory to your PATH from your bashrc like:
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
-  # Additionally, you can access their man pages with normal names if you add
-  # the "gnuman" directory to your MANPATH from your bashrc as well:
-fi
+export HADOOP_HOME=/usr/lib/hadoop
+export HADOOP_INSTALL=/usr/lib/hadoop
+export PATH=$PATH:$HADOOP_INSTALL/bin
+export PATH=$PATH:$HADOOP_INSTALL/sbin
+export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
+export HADOOP_COMMON_HOME=$HADOOP_INSTALL
+export HADOOP_HDFS_HOME=$HADOOP_INSTALL/client
+export YARN_HOME=$HADOOP_INSTALL
 
 export TERM=xterm-256color
 
