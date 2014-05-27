@@ -31,8 +31,10 @@ alias tail='tail -n 10'
 alias xx='exit'
 alias watchdir='watch -n 5 "ls -lasht"'
 alias idgaf="echo \"¯\_(ツ)_/¯\""
+alias buildin="echo '\nᕕ( ᐛ )ᕗ  buildin...\n'; ./deploy"
 alias files="nemo"
-
+alias ipy="ipython"
+alias proc_on_port="sudo netstat -nlp | grep"
 # mimic the OSX "open" command
 alias open='xdg-open'
 
