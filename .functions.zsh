@@ -10,17 +10,13 @@ function me() { echo '7338372'; }
 function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
 
 # Ex. tarball ./foo  => foo.tar.gz
-function tarball_fn() {
-  tar -pvczf "${1}.tar.gz" "$@";
+function tarball {
+  tar -pvczf "$1.tar.gz" $@;
 }
 
-alias tarball=tarball_fn
-
-function topgrep_fn() {
-  top -c -p `pgrep -d, -f ${1}`;
+function topgrep() {
+  top -c -p `pgrep -d, -f $1`;
 }
-
-alias topgrep=topgrep_fn
 
 # shameslessly copied from the oh-my-zsh plugin
 #
@@ -44,8 +40,7 @@ function git_publish() {
 
 alias gpub=git_publish
 
-function unavro_fn() {
-  java -jar ~/lib/avro-tools-1.7.4.jar tojson $@
+function unavro() {
+  java -jar ~/lib/avro-tools-1.7.6.jar tojson $@
 }
 
-alias unavro=unavro_fn
