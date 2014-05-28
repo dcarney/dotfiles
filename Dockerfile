@@ -61,15 +61,17 @@ RUN rm -rf /root/.ssh && mkdir -p /root/.ssh/
 RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 # all-important dotfiles
+RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 RUN mkdir -p /root/src
 RUN cd /root/src && git clone https://github.com/dcarney/dotfiles.git
 ENV DOTFILES /root/src/dotfiles
+RUN ln -s $DOTFILES/.oh-my-zsh/themes/dcarney.zsh-theme /root/.oh-my-zsh/themes/dcarney.zsh-theme
 RUN ln -s $DOTFILES/.tmux.conf /root/.tmux.conf
 RUN ln -s $DOTFILES/.gitconfig /root/.gitconfig
 RUN ln -s $DOTFILES/.vimrc /root/.vimrc
 RUN ln -s $DOTFILES/.vim /root/.vim
 RUN ln -s $DOTFILES/.zshrc /root/.zshrc
-RUN find $DOTFILES/ -name "*.zsh" | xargs -I {} basename {} | xargs -I {} ln -s $DOTFILES/{} {}
+RUN find $DOTFILES/ -name "*.zsh" | xargs -I {} basename {} | xargs -I {} ln -s $DOTFILES/{} /root/{}
 
 # Dropship
 RUN mkdir -p /usr/local/dropship
@@ -79,7 +81,7 @@ RUN chmod +x /usr/bin/dropship
 
 # the pythons
 RUN easy_install readline
-RUN pip install pyopenssl
+RUN pip install pyopenssl virtualenvwrapper
 RUN apt-get install --no-install-recommends -y ipython-notebook
 
 # a dedicated virtualenv for data manipulation
