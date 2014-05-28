@@ -19,7 +19,7 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 # env vars
-export WORKON_HOME=~/virtualenvs
+export WORKON_HOME=~/.virtualenvs
 export ANT_HOME=/usr/local/ant
 export GOROOT=/usr/local/go
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
