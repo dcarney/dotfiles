@@ -63,12 +63,13 @@ RUN echo "Host github.com\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 # all-important dotfiles
 RUN mkdir -p /root/src
 RUN cd /root/src && git clone https://github.com/dcarney/dotfiles.git
-RUN ln -s /root/src/dotfiles/.tmux.conf /root/.tmux.conf
-RUN ln -s /root/src/dotfiles/.gitconfig /root/.gitconfig
-RUN ln -s /root/src/dotfiles/.vimrc /root/.vimrc
-RUN ln -s /root/src/dotfiles/.vim /root/.vim
-RUN ln -s /root/src/dotfiles/.zshrc /root/.zshrc
-RUN find -name "/root/src/dotfiles/*.zsh" -exec ln -s {} "/root" \;
+ENV DOTFILES /root/src/dotfiles
+RUN ln -s $DOTFILES/.tmux.conf /root/.tmux.conf
+RUN ln -s $DOTFILES/.gitconfig /root/.gitconfig
+RUN ln -s $DOTFILES/.vimrc /root/.vimrc
+RUN ln -s $DOTFILES/.vim /root/.vim
+RUN ln -s $DOTFILES/.zshrc /root/.zshrc
+RUN find $DOTFILES/ -name "*.zsh" | xargs -I {} basename {} | xargs -I {} ln -s $DOTFILES/{} {}
 
 # Dropship
 RUN mkdir -p /usr/local/dropship
@@ -79,8 +80,27 @@ RUN chmod +x /usr/bin/dropship
 # the pythons
 RUN easy_install readline
 RUN pip install pyopenssl
-RUN apt-get install --no-install-recommends -y \
-  ipython-notebook
+RUN apt-get install --no-install-recommends -y ipython-notebook
+
+# a dedicated virtualenv for data manipulation
+ENV WORKON_HOME $HOME/.virtualenvs
+RUN mkdir -p $WORKON_HOME
+
+RUN virtualenv -p python $WORKON_HOME/pydata
+ENV VIRTUAL_ENV $WORKON_HOME/pydata
+
+RUN $VIRTUAL_ENV/bin/pip install numpy && \
+        $VIRTUAL_ENV/bin/pip install scipy && \
+        $VIRTUAL_ENV/bin/pip install pandas && \
+        $VIRTUAL_ENV/bin/pip install pyzmq && \
+        $VIRTUAL_ENV/bin/pip install tornado && \
+        $VIRTUAL_ENV/bin/pip install jinja2 && \
+        $VIRTUAL_ENV/bin/pip install IPython && \
+        $VIRTUAL_ENV/bin/pip install matplotlib && \
+        $VIRTUAL_ENV/bin/pip install patsy && \
+        $VIRTUAL_ENV/bin/pip install statsmodels && \
+        $VIRTUAL_ENV/bin/pip install pymc && \
+        $VIRTUAL_ENV/bin/pip install scikit-learn
 
 # node and coffeescript
 RUN npm config set strict-ssl false
