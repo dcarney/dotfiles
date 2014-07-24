@@ -39,6 +39,8 @@ alias open='xdg-open'
 # build w/ 2 threads/core
 alias mvn='mvn -T 2C'
 
+# use the 'gce' profile, and don't attempt to verify SSL certs
+alias mvn_gce="mvn -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Pgce -T 2C"
 # list available rubies
 alias rubies='ruby-build --definitions'
 
@@ -49,6 +51,7 @@ alias pstree='nocorrect pstree'
 alias pgrep='nocorrect pgrep'
 alias cap='nocorrect cap'
 alias node='nocorrect node'
+alias jrnl='nocorrect jrnl'
 
 # global aliases
 alias -g L="| less"
