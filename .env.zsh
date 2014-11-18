@@ -1,6 +1,8 @@
 # vi mode!
 bindkey -v
 
+bindkey '^R' history-incremental-search-backward
+
 # turn off annoying bells
 setopt nobeep
 
@@ -26,8 +28,12 @@ export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
 export EDITOR=vim
 export GUI_EDITOR=mvim
 
+# golang
+export GOPATH=/home/dcarney/src/golang
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 # add my junk to the PATH
-export PATH=/usr/local/bin:/usr/local/sbin:"$GOROOT/bin":"$GOPATH/bin":"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/bdutil:~/bin/google-cloud-sdk/bin
+export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/bdutil:~/bin/google-cloud-sdk/bin
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 
 export R_HOME=/usr/lib/R
@@ -49,3 +55,6 @@ eval "$(rbenv init -)"
 
 # enable virtualenvwrapper
 source /usr/local/bin/virtualenvwrapper.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+source /home/dcarney/bin/google-cloud-sdk/path.zsh.inc
