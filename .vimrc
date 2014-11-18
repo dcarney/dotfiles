@@ -71,6 +71,22 @@ nnoremap <C-h> :nohlsearch<return>
 cabbrev ws %s/\s\+$//g
 
 " ----------------------------------------------------------------------------
+"  move between panes using vim movement (Ctrl + j, etc.)
+" ----------------------------------------------------------------------------
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" ----------------------------------------------------------------------------
+"  golang key mappings
+" ----------------------------------------------------------------------------
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-run)
+
+" ----------------------------------------------------------------------------
 " Macros
 "   NOTE: to enter an <ESC> in the macro, use the ^[ char (CTRL-V ESC), or
 "         use \e and double quote the macro
@@ -93,6 +109,9 @@ call vundle#begin()
 Plugin'gmarik/Vundle.vim'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'git://github.com/mkitt/tabline.vim.git'
+Plugin 'git://github.com/fatih/vim-go.git'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'scrooloose/nerdtree.git'
 call vundle#end()
 
 filetype plugin indent on  " required!
