@@ -8,7 +8,7 @@
 [alias]
   unstage = reset HEAD
   # pretty history
-  hist = log --pretty=format:\"%Cgreen%h%Creset %ad | %s%d [%Cred%an%Creset]\" --graph --date=short
+  hist = log --pretty=format:\"%Cgreen%h%Creset %ad | %s%d [%Cred%an%Creset]\" --graph --date=iso
   go = checkout
   undopush = push -f origin HEAD^:master
   s = status
