@@ -49,7 +49,7 @@ set ls=2                    " Always show status bar
 
 " only exists in vim >= 7.3
 if exists('+colorcolumn')
-  set colorcolumn=80                   " Show colorcolumn at 80 chars
+  set colorcolumn=100     " Show colorcolumn at 100 chars
   hi ColorColumn ctermbg=darkgrey guibg=DimGray
 endif
 
