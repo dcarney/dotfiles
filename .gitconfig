@@ -21,7 +21,7 @@
   pom = pull origin master
   pr = pull --rebase
   prom = pull --rebase origin master
-  branches = branch -a
+  branches = branch -avv
   tags = tag -l
   stashes = stash list
   remotes = remote -v
