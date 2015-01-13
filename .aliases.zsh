@@ -33,6 +33,10 @@ alias lib='cd ~/src/java_libraries'
 alias misc='cd ~/misc'
 alias golang="cd $GOPATH"
 
+
+# irssi - ensures the row-refresh functionality works properly
+alias irssi='TERM=screen-256color irssi'
+
 # misc
 alias unjar='jar xvf'
 alias fs="stat -f \"%z bytes\"" # File size
