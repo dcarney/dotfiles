@@ -1,0 +1,1 @@
+/home/dcarney/.irssi/scripts/nicklist.pl
