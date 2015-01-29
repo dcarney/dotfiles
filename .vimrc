@@ -86,6 +86,9 @@ au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
 
+" let goimports handle inserting import paths
+let g:go_fmt_command = "goimports"
+
 " ----------------------------------------------------------------------------
 " Macros
 "   NOTE: to enter an <ESC> in the macro, use the ^[ char (CTRL-V ESC), or
