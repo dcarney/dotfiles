@@ -27,6 +27,7 @@
   remotes = remote -v
   showlast = show HEAD
   showstash = stash show -p
+  g = grep -n
 
   # @{u} means 'upstream', aka origin/foobar if you're on the 'foobar' branch
   unpushed = log @{u}..HEAD --pretty=format:\"%Cgreen%h%Creset %ad | %s%d [%Cred%an%Creset]\" --graph --date=short
