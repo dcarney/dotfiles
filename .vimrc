@@ -62,6 +62,8 @@ vnoremap `` :Sscratch<CR>
 map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
 
+nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
+
 " easier buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
