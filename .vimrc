@@ -62,8 +62,6 @@ vnoremap `` :Sscratch<CR>
 map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
 
-nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
-
 " easier buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
@@ -89,9 +87,14 @@ au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
 
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
 " let goimports handle inserting import paths
 let g:go_fmt_command = "goimports"
 
+" ctrlp plugin default mappings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 " ----------------------------------------------------------------------------
 " Macros
 "   NOTE: to enter an <ESC> in the macro, use the ^[ char (CTRL-V ESC), or
@@ -119,6 +122,7 @@ Plugin 'git://github.com/fatih/vim-go.git'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 filetype plugin indent on  " required!
