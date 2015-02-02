@@ -54,7 +54,7 @@ if exists('+colorcolumn')
 endif
 
 " ----------------------------------------------------------------------------
-" Key Mappings / Command abbrevs
+" Plugin configs
 " ----------------------------------------------------------------------------
 " double-backtick activates the scratch.vim plugin in visual and normal modes
 nnoremap `` :Sscratch<CR>
@@ -62,6 +62,21 @@ vnoremap `` :Sscratch<CR>
 map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
 
+" ctrlp plugin config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" 'c' - the directory of the current file.
+" " 'r' - the nearest ancestor that contains one of these directories or
+" files: .git .hg .svn .bzr _darcs
+" " 'a' - like c, but only if the current working directory outside of CtrlP
+" is not a direct ancestor of the directory of the current file.
+" " 0 or '' (empty string) - disable this feature.
+let g:ctrlp_working_path_mode = 'ra'
+
+" ----------------------------------------------------------------------------
+" Key Mappings / Command abbrevs
+" ----------------------------------------------------------------------------
 " easier buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
@@ -86,7 +101,6 @@ au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-run)
-
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
 " let goimports handle inserting import paths
@@ -101,7 +115,10 @@ let g:ctrlp_cmd = 'CtrlP'
 "         use \e and double quote the macro
 " ----------------------------------------------------------------------------
 " comment out a line with '# '
-let @c="i# \e0j"
+let @h="i# \e0j"
+
+" comment out a line with '// '
+let @c="i// \e0j"
 
 " indent a line with 2 spaces
 let @i="i  \e0j"
@@ -123,6 +140,7 @@ Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 filetype plugin indent on  " required!
