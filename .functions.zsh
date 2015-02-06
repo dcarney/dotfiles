@@ -44,3 +44,39 @@ function unavro() {
   java -jar ~/lib/avro-tools-1.7.6.jar tojson $@
 }
 
+function avrocompile() {
+  java -jar ~/lib/avro-tools-1.7.6.jar compile -string schema $@ .
+}
+
+function dockertail() {
+  docker ps | grep $1 | cut -d' ' -f1 | xargs -I {} docker logs -t -f {}
+}
+
+function dockernuke() {
+  docker stop $1 && docker kill $1 && docker rm $1
+}
+
+# create the pane with irssi's nicklist
+function irssi_nickpane() {
+    tmux renamew irssi                                              # name the window
+    tmux -q setw main-pane-width $(( $(tput cols) - 21))            # set the main pane width to the total width-20
+    tmux splitw -v "cat ~/.irssi/nicklistfifo"                      # create the window and begin reading the fifo
+    tmux -q selectl main-vertical                                   # assign the layout
+    tmux selectw -t irssi                                           # select window 'irssi'
+    tmux selectp -t 0                                               # select pane 0
+}
+
+# irssi wrapper
+function irssiss() {
+    irssi_nickpane
+    $(which irssi)                                                  # launch irssi
+}
+
+# repair running irssi's nicklist pane
+function irssi_repair() {
+    tmux selectw -t irssi
+    tmux selectp -t 0
+    tmux killp -a                                                   # kill all panes
+    irssi_nickpane
+}
+

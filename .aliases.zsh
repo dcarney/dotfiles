@@ -26,13 +26,11 @@ alias gprom='git pull --rebase origin master'
 
 # locations
 alias src='cd ~/src'
-alias api='cd ~/src/relevancy_api'
-alias backend='cd ~/src/relevancy_backend'
+alias backend='cd $GOPATH/src/git.zulily.com/core_backend'
 alias conf='cd ~/src/core_conf'
 alias lib='cd ~/src/java_libraries'
 alias misc='cd ~/misc'
 alias golang="cd $GOPATH"
-
 
 # irssi - ensures the row-refresh functionality works properly
 alias irssi='TERM=screen-256color irssi'
