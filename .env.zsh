@@ -20,25 +20,35 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-# env vars
+export TERM=xterm-256color
+
+# misc env vars
 export WORKON_HOME=~/.virtualenvs
 export ANT_HOME=/usr/local/ant
-export GOROOT=/usr/local/go
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
 export EDITOR=vim
 export GUI_EDITOR=mvim
 
 # golang
-export GOPATH=/home/dcarney/src/golang
+export GOROOT=/usr/local/go
+export GOPATH=/home/dcarney/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+# core_conf (used for gcs-push.sh)
+export CONF_ROOT=/home/dcarney/src/core_conf/
+export PATH=$PATH:$CONF_ROOT/bin
+
+# nsq binaries
+export PATH=$PATH:/home/dcarney/bin/nsq/bin
+
 # add my junk to the PATH
-export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/bdutil:~/bin/google-cloud-sdk/bin
+export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/google-cloud-sdk/bin
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 
 export R_HOME=/usr/lib/R
 export JAVA_HOME=/usr/local/java/jdk1.7.0_51/
 
+# hadoop
 export HADOOP_HOME=/usr/lib/hadoop
 export HADOOP_INSTALL=/usr/lib/hadoop
 export PATH=$PATH:$HADOOP_INSTALL/bin
@@ -47,8 +57,6 @@ export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
 export HADOOP_COMMON_HOME=$HADOOP_INSTALL
 export HADOOP_HDFS_HOME=$HADOOP_INSTALL/client
 export YARN_HOME=$HADOOP_INSTALL
-
-export TERM=xterm-256color
 
 # enable shims in rbenv
 eval "$(rbenv init -)"
