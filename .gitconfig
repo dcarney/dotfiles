@@ -1,8 +1,5 @@
 [difftool]
   external = ~/script/git_diff_cmd.sh
-[url "https://"]
-  # corporate firewalls no like git
-  insteadOf = git://
 [github]
   user = dcarney
 [alias]
