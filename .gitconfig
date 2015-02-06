@@ -44,3 +44,5 @@
   # 'git push' will push the current branch to its upstream branch
   # see http://goo.gl/GLcPZ for details
   default = upstream
+[user]
+	name = Dylan Carney
