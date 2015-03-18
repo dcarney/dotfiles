@@ -61,8 +61,5 @@ export YARN_HOME=$HADOOP_INSTALL
 # enable shims in rbenv
 eval "$(rbenv init -)"
 
-# enable virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
-
 # The next line updates PATH for the Google Cloud SDK.
 source /home/dcarney/bin/google-cloud-sdk/path.zsh.inc
