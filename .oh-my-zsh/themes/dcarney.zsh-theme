@@ -3,9 +3,10 @@
 local user_color='green'; [ $UID -eq 0 ] && user_color='red'
 PROMPT='%n@%m %{$fg_bold[$user_color]%}%~%{$reset_color%}%(!.#.>) '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
-
 local return_status="%{$fg_bold[red]%}%(?..%?)%{$reset_color%}"
-RPROMPT='${return_status}$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
+
+# vi_mode_prompt_info is defined in the oh-my-zsh vi-mode plugin
+RPROMPT='$(vi_mode_prompt_info) ${return_status}$(git_prompt_info)$(git_prompt_status)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" "
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
