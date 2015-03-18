@@ -75,6 +75,12 @@ let g:ctrlp_cmd = 'CtrlP'
 " " 0 or '' (empty string) - disable this feature.
 let g:ctrlp_working_path_mode = 'ra'
 
+" enable markdown highlighting
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" don't snow the scratch preview window for autocompletion
+set completeopt-=preview
+
 " ----------------------------------------------------------------------------
 " Key Mappings / Command abbrevs
 " ----------------------------------------------------------------------------
