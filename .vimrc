@@ -25,6 +25,7 @@ set go-=R
 set nolist                 " show whitespace? list/nolist
 " set list listchars=tab:».  " show tabs as (Ctrl-K >>)
 set ts=2                   " 2 space 'tabs'
+set shiftwidth=2           " 2 space indentations
 set expandtab              " expand tabs to spaces
 set nosmarttab             " tabs are dumb
 
