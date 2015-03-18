@@ -31,6 +31,7 @@ alias conf='cd ~/src/core_conf'
 alias lib='cd ~/src/java_libraries'
 alias misc='cd ~/misc'
 alias golang="cd $GOPATH"
+alias gohome="cd $GOPATH/src/core-gitlab.corp.zulily.com/core"
 
 # irssi - ensures the row-refresh functionality works properly
 alias irssi='TERM=screen-256color irssi'
