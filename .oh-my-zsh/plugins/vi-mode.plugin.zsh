@@ -1,3 +1,7 @@
+# reduces the lag time before the vi mode change is registered:
+# http://dougblack.io/words/zsh-vi-mode.html
+export KEYTIMEOUT=1
+
 # Ensures that $terminfo values are valid and updates editor information when
 # the keymap changes.
 function zle-keymap-select zle-line-init zle-line-finish {
