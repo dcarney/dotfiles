@@ -169,6 +169,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 call vundle#end()
 
 filetype plugin indent on  " required!
