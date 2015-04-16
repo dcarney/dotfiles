@@ -90,6 +90,12 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " hitting <Ctrl+h> clears last search highlighting
 nnoremap <C-h> :nohlsearch<return>
 
+" "replace" current selection with register
+"   vmap - mapping for visual mode
+"   _d - delete current selection into "black hole register"
+"   P - paste
+vmap r "_dP
+
 " delete trailing whitespace with :ws
 cabbrev ws %s/\s\+$//g
 
