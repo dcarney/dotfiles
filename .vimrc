@@ -125,6 +125,11 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
+let $PATH = "/home/dcarney/go/bin:".$PATH
+let $GOPATH = "/home/dcarney/go"
+let $GOROOT = "/usr/local/go"
+let g:go_bin_path = "/home/dcarney/go/bin"
+
 " let goimports handle inserting import paths
 let g:go_fmt_command = "goimports"
 
