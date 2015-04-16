@@ -101,6 +101,11 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" ----------------------------------------------------------------------------
+" split windows using Ctrl+W then '-' or '|', to mirror my tmux bindings
+" ----------------------------------------------------------------------------
+nnoremap <C-W>\| :vsplit<Enter>
+nnoremap <C-W>- :split<Enter>
 
 " ----------------------------------------------------------------------------
 " disable the arrow keys (stop using them as a crutch!)
