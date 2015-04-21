@@ -82,7 +82,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 set completeopt-=preview
 
 " ----------------------------------------------------------------------------
-" Key Mappings / Command abbrevs
+" key mappings / command abbrevs / custom functions
 " ----------------------------------------------------------------------------
 " easier buffer switching
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -98,6 +98,25 @@ vmap r "_dP
 
 " delete trailing whitespace with :ws
 cabbrev ws %s/\s\+$//g
+
+
+" :GG to run a `git grep` on the current working tree
+" "silent" makes the cmd bypass the shell's "Hit ENTER to continue" prompt
+" "cw" opens the results in the quickfix window
+func GitGrep(...)
+  let save = &grepprg
+  set grepprg=git\ grep\ -n\ $*
+  let s = 'grep'
+  for i in a:000
+    let s = s . ' ' . i
+  endfor
+  exe s
+  let &grepprg = save
+endfun
+command -nargs=? GG silent call GitGrep(<f-args>) | cw
+
+" let :gg do the same thing as the above
+cabbrev gg GG
 
 " ----------------------------------------------------------------------------
 "  move between panes using vim movement (Ctrl + j, etc.)
