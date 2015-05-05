@@ -108,7 +108,7 @@ link_file () {
   fi
 }
 
-TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc)
+TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .i3/config .i3status.conf)
 
 install_dotfiles () {
   info 'installing dotfiles'
