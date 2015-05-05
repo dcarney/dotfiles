@@ -47,7 +47,7 @@ bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
@@ -171,3 +171,5 @@ bindsym $mod+comma exec i3-input -F 'rename workspace to "%s"' -P 'New name for 
 new_window pixel 2
 
 exec --no-startup-id nm-applet
+
+bindsym $mod+shift+l exec i3lock -c 000000
