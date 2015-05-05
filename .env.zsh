@@ -45,6 +45,16 @@ export PATH=$PATH:/home/dcarney/bin/nsq/bin
 export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/google-cloud-sdk/bin
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 
+# source some other paths, but only if they exist
+MOREPATHS=(~/.rbenv/bin ~/bin/google-cloud-sdk/bin)
+for dst in ${MOREPATHS[@]}
+do
+  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+  then
+    export PATH="$PATH":"$dst"
+  fi
+done
+
 export R_HOME=/usr/lib/R
 export JAVA_HOME=/usr/local/java/jdk1.7.0_51/
 
@@ -58,8 +68,15 @@ export HADOOP_COMMON_HOME=$HADOOP_INSTALL
 export HADOOP_HDFS_HOME=$HADOOP_INSTALL/client
 export YARN_HOME=$HADOOP_INSTALL
 
-# enable shims in rbenv
-eval "$(rbenv init -)"
+# use the shell built-in 'command' to see if rbenv exists
+if command -v rbenv >/dev/null 2>&1; then
+  # enable shims in rbenv
+  eval "$(rbenv init -)"
+fi
 
 # The next line updates PATH for the Google Cloud SDK.
-source /home/dcarney/bin/google-cloud-sdk/path.zsh.inc
+dst=/home/dcarney/bin/google-cloud-sdk/path.zsh.inc
+if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+then
+  source /home/dcarney/bin/google-cloud-sdk/path.zsh.inc
+fi
