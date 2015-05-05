@@ -108,10 +108,35 @@ link_file () {
   fi
 }
 
-TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .i3/config .i3status.conf)
+TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .oh-my-zsh/themes/dcarney.zsh-theme .i3/config .i3status.conf)
 
 install_dotfiles () {
   info 'installing dotfiles'
+
+  # create a few dirs that need to exist
+  mkdir -p "${HOME}/.i3"
+  mkdir -p "${HOME}/.vim"
+
+  # clone a few repos if they don't already exist
+  dst="${HOME}/.vim/bundle/Vundle.vim"
+  info "checking for vundle at $dst..."
+  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+  then
+    success "vundle already installed"
+  else
+    info "installing vundle..."
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  fi
+
+  dst="${HOME}/.oh-my-zsh"
+  info "checking for oh-my-zsh at $dst..."
+  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+  then
+    success "oh-my-zsh already installed"
+  else
+    info "installing oh-my-zsh..."
+    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  fi
 
   local overwrite_all=false backup_all=false skip_all=false
 
