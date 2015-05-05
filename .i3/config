@@ -31,6 +31,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# cycle through workspaces (reminiscent of the ol' Alt+Tab)
+bindsym $mod+Tab workspace next
 
 # change focus
 bindsym $mod+j focus left
