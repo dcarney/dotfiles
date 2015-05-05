@@ -1,3 +1,15 @@
+# tunnels traffic to a remote server/port over an SSH tunnel on a localhost port
+#
+# `ssh -f root@foobar.example.com -L 1234:foobar.example.com:8080 -N
+# The -f tells ssh to go into the background just before it executes the command
+# the -N instructs OpenSSH to not execute a command on the remote system.
+#
+# usage: to tunnel traffic for foobar.example.com:8080 over localhost:1234:
+#   tunnel foobar.example.com 8080 1234
+function tunnel() {
+  ssh -f $1 -L $3:$1:$2 -N
+}
+
 # dead-simple process control
 function start () { ~/bin/start/$*;}
 function stop () { ~/bin/stop/$*;}
