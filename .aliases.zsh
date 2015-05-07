@@ -36,6 +36,11 @@ alias gohome="cd $GOPATH/src/core-gitlab.corp.zulily.com/core"
 # irssi - ensures the row-refresh functionality works properly
 alias irssi='TERM=screen-256color irssi'
 
+# nemo/nautilus - don't open a desktop window when using the file manager
+alias nemo="nemo --no-desktop"
+alias files="nemo --no-desktop"
+alias nautilus="nautilus --no-desktop"
+
 # misc
 alias unjar='jar xvf'
 alias fs="stat -f \"%z bytes\"" # File size
@@ -43,7 +48,6 @@ alias head='head -n 10'
 alias watchdir='watch -n 5 "ls -lasht"'
 alias idgaf="echo \"¯\_(ツ)_/¯\""
 alias buildin="echo '\nᕕ( ᐛ )ᕗ  buildin...\n'; ./deploy"
-alias files="nemo"
 alias ipy="ipython"
 alias proc_on_port="sudo netstat -nlp | grep"
 alias open='xdg-open'
