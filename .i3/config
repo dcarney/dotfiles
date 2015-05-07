@@ -59,8 +59,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # horizontal/vertical splits (to match my tmux config)
-bindsym $mod+Underscore split h
-bindsym $mod+bar split v
+# NOTE: Shift + minus == '_'
+#       Shift + backslash == '|'
+bindsym $mod+Shift+minus split v
+bindsym $mod+Shift+backslash split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
