@@ -163,7 +163,7 @@ bar {
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+space exec dmenu_run -i -b -p 'Linux Mint' -fn 'Ubuntu Mono:bold:pixelsize=20'
+bindsym $mod+space exec dmenu_run -i -b -p 'Le Menu' -fn 'Ubuntu Mono:bold:pixelsize=20'
 
 bindsym $mod+comma exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
