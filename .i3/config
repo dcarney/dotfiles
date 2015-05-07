@@ -34,11 +34,11 @@ bindsym $mod+Shift+q kill
 # cycle through workspaces (reminiscent of the ol' Alt+Tab)
 bindsym $mod+Tab workspace next
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# change focus (using vim-style movement)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -46,11 +46,11 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+# move focused window (using vim-style movement)
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -125,14 +125,15 @@ bindsym $mod+u border none
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
+        # (using vim-style movement)
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -174,4 +175,4 @@ new_window pixel 2
 
 exec --no-startup-id nm-applet
 
-bindsym $mod+shift+l exec i3lock -c 000000
+bindsym $mod+Shift+Control+l exec i3lock -c 000000
