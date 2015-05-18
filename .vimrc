@@ -146,8 +146,13 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" imap <up> <NOP>
+" imap <down> <NOP>
+" imap <left> <NOP>
+" imap <right> <NOP>
+
 " ----------------------------------------------------------------------------
-"  golang key mappings
+"  golang configs
 " ----------------------------------------------------------------------------
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
@@ -204,5 +209,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 call vundle#end()
 
-filetype plugin indent on  " required!
+" indent by filetype - required!
+filetype plugin indent on
 
