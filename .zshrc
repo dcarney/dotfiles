@@ -39,3 +39,4 @@ source $ZSH/oh-my-zsh.sh
 #
 # source every .zsh file (including hidden file and symlinks) in my home dir
 for config_file ($HOME/*.zsh(D)) source $config_file
+source $HOME/.aliases.zsh
