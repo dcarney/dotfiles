@@ -6,17 +6,6 @@ filetype on         " Set automatic filetype detection to on
 set hlsearch        " Show highlighting on search matches
 set vb              " set visualbell, to silence the annoying audible bell
 colorscheme molokai
-set guifont=Inconsolata:h14
-
-" ----------------------------------------------------------------------------
-"  MacVim
-" ----------------------------------------------------------------------------
-" Remove all the UI toolbars
-set go-=T
-set go-=l
-set go-=L
-set go-=r
-set go-=R
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
@@ -49,10 +38,10 @@ set number                  " Show row numbers on the left side
 set ls=2                    " Always show status bar
 
 " only exists in vim >= 7.3
-if exists('+colorcolumn')
-  set colorcolumn=100     " Show colorcolumn at 100 chars
-  hi ColorColumn ctermbg=darkgrey guibg=DimGray
-endif
+" if exists('+colorcolumn')
+"   set colorcolumn=100     " Show colorcolumn at 100 chars
+"   hi ColorColumn ctermbg=darkgrey guibg=DimGray
+" endif
 
 " ----------------------------------------------------------------------------
 " Plugin configs
