@@ -155,6 +155,7 @@ au FileType go nmap <Leader>gdv <Plug>(go-doc-vertical)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+cabbrev def GoDef
 
 let $PATH = "/home/dcarney/go/bin:".$PATH
 let $GOPATH = "/home/dcarney/go"
