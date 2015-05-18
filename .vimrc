@@ -79,6 +79,23 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " hitting <Ctrl+h> clears last search highlighting
 nnoremap <C-h> :nohlsearch<return>
 
+let mapleader = "\<Space>"
+
+" save buffer
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>wq :wq<CR>
+
+" enter visual mode
+nmap <Leader><Leader> V
+
+" yank/paste to system clipboard (assuming your vim supports it)
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 " "replace" current selection with register
 "   vmap - mapping for visual mode
 "   _d - delete current selection into "black hole register"
