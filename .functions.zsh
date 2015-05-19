@@ -10,6 +10,13 @@ function tunnel() {
   ssh -f $1 -L $3:$1:$2 -N
 }
 
+# Sets a reminder notification (ideally using `dunst`) for N minutes from now.
+#
+# usage: remind 5 "check on that one thing"
+function remind() {
+  echo "notify-send \"$2\"" | at now + $1 min
+}
+
 # dead-simple process control
 function start () { ~/bin/start/$*;}
 function stop () { ~/bin/stop/$*;}
