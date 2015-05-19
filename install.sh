@@ -108,7 +108,7 @@ link_file () {
   fi
 }
 
-TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .oh-my-zsh/themes/dcarney.zsh-theme .i3/config .i3status.conf .xmodmap .xinitrc)
+TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .oh-my-zsh/themes/dcarney.zsh-theme .i3/config .i3status.conf .xmodmap .xinitrc .config/dunst/dunstrc)
 
 install_dotfiles () {
   info 'installing dotfiles'
@@ -116,6 +116,7 @@ install_dotfiles () {
   # create a few dirs that need to exist
   mkdir -p "${HOME}/.i3"
   mkdir -p "${HOME}/.vim"
+  mkdir -p "${HOME}/.config/dunst"
 
   # clone a few repos if they don't already exist
   dst="${HOME}/.vim/bundle/Vundle.vim"
