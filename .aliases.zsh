@@ -52,6 +52,8 @@ alias ipy="ipython"
 alias proc_on_port="sudo netstat -nlp | grep"
 alias open='xdg-open'
 
+alias epoch='date +%s'
+
 # build w/ 2 threads/core
 alias mvn='mvn -T 2C'
 
