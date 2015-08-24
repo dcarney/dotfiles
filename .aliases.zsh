@@ -54,6 +54,18 @@ alias open='xdg-open'
 
 alias epoch='date +%s'
 
+alias slack="nohup docker run --rm -t \
+ -v /etc/machine-id:/etc/machine-id:ro \
+ -v /etc/localtime:/etc/localtime:ro \
+ -v /tmp/.X11-unix:/tmp/.X11-unix \
+ -e DISPLAY=unix$DISPLAY \
+ --device /dev/snd:/dev/snd \
+ -v /var/run/dbus:/var/run/dbus \
+ -v $HOME/.scudcloud:/home/user/.config/scudcloud \
+ --name slack \
+ dcarney/scudcloud \
+ < /dev/null >> /dev/null 2>&1 & "
+
 # build w/ 2 threads/core
 alias mvn='mvn -T 2C'
 
