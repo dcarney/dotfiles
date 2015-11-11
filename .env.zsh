@@ -35,7 +35,7 @@ export GOPATH=/home/dcarney/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # k8s cluster configs
-export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/.kubeconfig:$HOME/src/core_conf/k8s/.kube/.kubeconfig"
+export KUBECONFIG="$HOME/.kube/config"
 
 # core_conf (used for gcs-push.sh)
 export CONF_ROOT=/home/dcarney/src/core_conf/
