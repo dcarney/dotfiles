@@ -62,7 +62,9 @@ let g:ctrlp_cmd = 'CtrlP'
 " " 'a' - like c, but only if the current working directory outside of CtrlP
 " is not a direct ancestor of the directory of the current file.
 " " 0 or '' (empty string) - disable this feature.
-let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = ''
+let g:ctrlp_root_markers = ['src']
 
 " enable markdown highlighting
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -162,10 +164,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 cabbrev def GoDef
 
-let $PATH = "/home/dcarney/go/bin:".$PATH
 let $GOPATH = "/home/dcarney/go"
 let $GOROOT = "/usr/local/go"
-let g:go_bin_path = "/home/dcarney/go/bin"
 
 " let goimports handle inserting import paths
 let g:go_fmt_command = "goimports"
