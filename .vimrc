@@ -52,6 +52,9 @@ vnoremap `` :Sscratch<CR>
 map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
 
+" show hidden files by default
+let NERDTreeShowHidden=1
+
 " ctrlp plugin config
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
