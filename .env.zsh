@@ -20,7 +20,24 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-export TERM=xterm-256color
+export TERM=rxvt-256color
+
+# set TERMINAL, so that urxvt is always first in i3's list of terminals to try
+#
+# i3-sensible-terminal (which is set up in the .i3/config) tries to
+# start one of the following (in that order):
+#   $TERMINAL (this is a non-standard variable)
+#   x-terminal-emulator (only present on Debian and derivatives)
+#   urxvt
+#   rxvt
+#   terminator
+#   Eterm
+#   aterm
+#   xterm
+#   gnome-terminal
+#   roxterm
+#   xfce4-terminal
+export TERMINAL=urxvt
 
 # misc env vars
 export WORKON_HOME=~/.virtualenvs
