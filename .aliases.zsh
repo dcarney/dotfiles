@@ -38,8 +38,7 @@ alias irssi='TERM=screen-256color irssi'
 
 # nemo/nautilus - don't open a desktop window when using the file manager
 alias nemo="nemo --no-desktop"
-alias files="nemo --no-desktop"
-alias nautilus="nautilus --no-desktop"
+alias files="thunar"
 
 # misc
 alias unjar='jar xvf'
