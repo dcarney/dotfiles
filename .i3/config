@@ -22,7 +22,8 @@ set $mod Mod4
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
-font pango:Ubuntu Mono 9
+# font pango:Ubuntu Mono 10
+font xft:Inconsolata Medium 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -165,6 +166,7 @@ bar {
     # Type             border  background font
     active_workspace #00afff #1c1c1c #ffffff
   }
+  font xft:Inconsolata Medium 10
 }
 
 
