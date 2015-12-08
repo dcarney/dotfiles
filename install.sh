@@ -115,7 +115,7 @@ install_dotfiles () {
 
   # create a few dirs that need to exist
   mkdir -p "${HOME}/.i3"
-  mkdir -p "${HOME}/.vim"
+  mkdir -p "${HOME}/.vim/bundle"
   mkdir -p "${HOME}/.config/dunst"
 
   # clone a few repos if they don't already exist
@@ -126,7 +126,7 @@ install_dotfiles () {
     success "vundle already installed"
   else
     info "installing vundle..."
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
   fi
 
   dst="${HOME}/.oh-my-zsh"
