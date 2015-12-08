@@ -1,0 +1,6 @@
+apt install slim
+copy file to /etc/slim.conf
+
+fixes keyboard being unresponsive on logout (https://bbs.archlinux.org/viewtopic.php?id=165117)
+with the line:
+  sessionstop_cmd    (killall --user $USER -TERM; systemctl restart slim)
