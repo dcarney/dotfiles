@@ -108,7 +108,7 @@ link_file () {
   fi
 }
 
-TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .oh-my-zsh/themes/dcarney.zsh-theme .i3/config .i3status.conf .xmodmap .xinitrc .Xresources .config/dunst/dunstrc)
+TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .oh-my-zsh/themes/dcarney.zsh-theme .i3/config .i3status.conf .xmodmap .xinitrc .Xresources .config/dunst/dunstrc .fontconfig)
 
 install_dotfiles () {
   info 'installing dotfiles'
@@ -154,6 +154,10 @@ install_dotfiles () {
     dst="${HOME}/$(basename ${src})"
     link_file "$src" "$dst"
   done
+
+  # other links
+  mkdir -p ~/.config/fontconfig
+  link_file "${HOME}/.fontconfig" "${HOME}/.config/fontconfig/fonts.conf"
 }
 
 install_dotfiles
