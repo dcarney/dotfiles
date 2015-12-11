@@ -48,18 +48,11 @@ export GUI_EDITOR=mvim
 
 # golang
 export GOROOT=/usr/local/go
-export GOPATH=/home/dcarney/go
+export GOPATH="$HOME/go"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # k8s cluster configs
 export KUBECONFIG="$HOME/.kube/config"
-
-# core_conf (used for gcs-push.sh)
-export CONF_ROOT=/home/dcarney/src/core_conf/
-export PATH=$PATH:$CONF_ROOT/bin
-
-# nsq binaries
-export PATH=$PATH:/home/dcarney/bin/nsq/bin
 
 # add my junk to the PATH
 export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/google-cloud-sdk/bin
@@ -75,24 +68,7 @@ do
   fi
 done
 
-export R_HOME=/usr/lib/R
 export JAVA_HOME=/usr/local/java/jdk1.7.0_51/
-
-# hadoop
-export HADOOP_HOME=/usr/lib/hadoop
-export HADOOP_INSTALL=/usr/lib/hadoop
-export PATH=$PATH:$HADOOP_INSTALL/bin
-export PATH=$PATH:$HADOOP_INSTALL/sbin
-export HADOOP_MAPRED_HOME=$HADOOP_INSTALL
-export HADOOP_COMMON_HOME=$HADOOP_INSTALL
-export HADOOP_HDFS_HOME=$HADOOP_INSTALL/client
-export YARN_HOME=$HADOOP_INSTALL
-
-# use the shell built-in 'command' to see if rbenv exists
-if command -v rbenv >/dev/null 2>&1; then
-  # enable shims in rbenv
-  eval "$(rbenv init -)"
-fi
 
 # The next line updates PATH for the Google Cloud SDK.
 dst=/home/dcarney/bin/google-cloud-sdk/path.zsh.inc

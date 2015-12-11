@@ -17,13 +17,6 @@ function remind() {
   echo "notify-send \"$2\"" | at now + $1 min
 }
 
-# dead-simple process control
-function start () { ~/bin/start/$*;}
-function stop () { ~/bin/stop/$*;}
-
-# because I'm forgetful/lazy
-function me() { echo '7338372'; }
-
 # cheatsheet shortcuts!
 # Ex. 'cheat git' will open ~/doc/cheat/git.txt in my configured editor
 function cheat () { $EDITOR ~/doc/cheat/$*.txt; }
@@ -69,10 +62,6 @@ function avrocompile() {
 
 function dockertail() {
   docker ps | grep $1 | cut -d' ' -f1 | xargs -I {} docker logs -t -f {}
-}
-
-function dockernuke() {
-  docker stop $1 && docker kill $1 && docker rm $1
 }
 
 # create the pane with irssi's nicklist
