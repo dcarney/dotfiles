@@ -10,6 +10,7 @@ sudo apt update
 
 sudo apt install \
   build-essential \
+  ctags \
   curl \
   fonts-droid \
   fonts-inconsolata \
