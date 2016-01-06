@@ -180,6 +180,15 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " ----------------------------------------------------------------------------
+"  javascript configs
+" ----------------------------------------------------------------------------
+" user 4-space indents for javascript files
+autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
+
+" :set conceallevel=2 to replace "function" with "ƒ", etc.
+let g:javascript_conceal_function = "ƒ"
+
+" ----------------------------------------------------------------------------
 " Macros
 "   NOTE: to enter an <ESC> in the macro, use the ^[ char (CTRL-V ESC), or
 "         use \e and double quote the macro
@@ -211,6 +220,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'pangloss/vim-javascript'
 call vundle#end()
 
 " indent by filetype - required!
