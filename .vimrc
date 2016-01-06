@@ -6,6 +6,8 @@ filetype on         " Set automatic filetype detection to on
 set hlsearch        " Show highlighting on search matches
 set vb              " set visualbell, to silence the annoying audible bell
 colorscheme molokai
+set fileencodings=utf-8
+set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
