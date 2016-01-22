@@ -1,3 +1,17 @@
+# Runs mitmproxy on the default port (8080), using the "official"
+# docker image, built from the src repo. A volume mount is made
+# so that HTTP flows can be saved to disk outside of the container.
+# To save a flow and have it appear on the host, save to path
+# under /tmp/mitm/.
+#
+# usage:  mitmproxy $HOME/docs/mitmproxy/
+#    if no dir is given for the volume mount argument, $PWD is used.
+function mitmproxy() {
+  SAVEDIR=${1:-$PWD}
+  docker run --rm --name mitmproxy -p 8080:8080 -v $SAVEDIR:/tmp/mitm -it mitmproxy mitmproxy
+}
+
+
 # tunnels traffic to a remote server/port over an SSH tunnel on a localhost port
 #
 # `ssh -f root@foobar.example.com -L 1234:foobar.example.com:8080 -N
