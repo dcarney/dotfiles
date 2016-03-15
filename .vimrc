@@ -46,7 +46,7 @@ set ls=2                    " Always show status bar
 " endif
 
 " ----------------------------------------------------------------------------
-" Plugin configs
+" misc plugin configs
 " ----------------------------------------------------------------------------
 " double-backtick activates the scratch.vim plugin in visual and normal modes
 nnoremap `` :Sscratch<CR>
@@ -70,6 +70,12 @@ let g:ctrlp_cmd = 'CtrlP'
 " let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_root_markers = ['src']
+
+" Start interactive vim-easy-align in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive vim-easy-align for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " enable markdown highlighting
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -109,27 +115,30 @@ vmap <Leader>P "+P
 "   P - paste
 vmap r "_dP
 
-" delete trailing whitespace with :ws
+" :ws - delete trailing whitespace
 cabbrev ws %s/\s\+$//g
 
+" :qj -  surround json keys w/ double quotes to make it valid json for
+"        use w/ other tools. (qj == Quote Json)
+cabbrev qj :%s@\([A-Za-z_]\+\):@"\1":@gc
 
 " :GG to run a `git grep` on the current working tree
 " "silent" makes the cmd bypass the shell's "Hit ENTER to continue" prompt
 " "cw" opens the results in the quickfix window
-func GitGrep(...)
-  let save = &grepprg
-  set grepprg=git\ grep\ -n\ $*
-  let s = 'grep'
-  for i in a:000
-    let s = s . ' ' . i
-  endfor
-  exe s
-  let &grepprg = save
-endfun
-command -nargs=? GG silent call GitGrep(<f-args>) | cw
+" func GitGrep(...)
+"   let save = &grepprg
+"   set grepprg=git\ grep\ -n\ $*
+"   let s = 'grep'
+"   for i in a:000
+"     let s = s . ' ' . i
+"   endfor
+"   exe s
+"   let &grepprg = save
+" endfun
+" command -nargs=? GG silent call GitGrep(<f-args>) | cw
 
 " let :gg do the same thing as the above
-cabbrev gg GG
+" cabbrev gg GG
 
 " ----------------------------------------------------------------------------
 "  move between panes using vim movement (Ctrl + j, etc.)
@@ -182,11 +191,17 @@ let g:ctrlp_cmd = 'CtrlP'
 " ----------------------------------------------------------------------------
 "  javascript configs
 " ----------------------------------------------------------------------------
-" user 4-space indents for javascript files
+" user 4-space indents for javascript/json files
 autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
+autocmd FileType json setlocal shiftwidth=4 softtabstop=4
 
 " :set conceallevel=2 to replace "function" with "ƒ", etc.
 let g:javascript_conceal_function = "ƒ"
+
+" jsdoc.vim plugin settings
+" allow interactive prompting for fn descriptions and types
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
 
 " ----------------------------------------------------------------------------
 " Macros
@@ -221,6 +236,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
+Plugin 'heavenshell/vim-jsdoc'
+Plugin 'junegunn/vim-easy-align'
 call vundle#end()
 
 " indent by filetype - required!
