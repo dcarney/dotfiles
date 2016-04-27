@@ -58,6 +58,9 @@ export KUBECONFIG="$HOME/.kube/config"
 export PATH=/usr/local/bin:/usr/local/sbin:"$PATH":~/.rbenv/bin:~/bin:~/scripts:~/script:~/bin/google-cloud-sdk/bin
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib:/usr/lib/x86_64-linux-gnu
 
+# cowsay!
+export PATH=$PATH:/usr/games
+
 # source some other paths, but only if they exist
 MOREPATHS=(~/.rbenv/bin ~/bin/google-cloud-sdk/bin)
 for dst in ${MOREPATHS[@]}
