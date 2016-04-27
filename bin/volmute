@@ -2,4 +2,4 @@
 
 # toggles the mute status on sound card 0, mixer "master"
 # "toggle" is effectively doing a "mute"/"unmute"
-amixer -c 0 sset Master toggle
+amixer -c 0 sset Master toggle > /dev/null
