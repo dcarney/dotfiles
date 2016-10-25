@@ -22,6 +22,16 @@ URxvt*termName: rxvt-unicode
 URxvt.perl-ext-common: default,matcher,clipboard,font-size
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
+!! By default, when shell output appears the scrollback view will automatically
+!! jump to the bottom of the buffer to display new output. If in cases where you
+!! want to see previous output (e.g., compiler messages), set the following
+!! options in ~/.Xresources:
+!! do not scroll with output
+URxvt*scrollTtyOutput: false
+!! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+!! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
 
 !! Molokai theme
 !! source: https://github.com/spazzpp2/dotfiles/blob/29819a5ac5e451bfa39bc324378aa508ef75cae8/Molokai.xrdb
