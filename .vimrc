@@ -131,6 +131,10 @@ command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw 25 | redraw!
 " let gr run the above command, with whatever word is under the cursor!
 nnoremap gr :Ggr "\<<cword>\>" *<CR>
 
+" easily close/open the "quickfix" window
+nnoremap cc :cclose<CR>
+nnoremap co :copen 25 <CR>
+
 " ----------------------------------------------------------------------------
 "  move between panes using vim movement (Ctrl + j, etc.)
 " ----------------------------------------------------------------------------
