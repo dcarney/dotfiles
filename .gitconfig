@@ -18,11 +18,11 @@
   pom = pull origin master
   pr = pull --rebase
   prom = pull --rebase origin master
-  branches = branch -avv
+  branches = branch -avv --sort=-committerdate
   tags = tag -l
   stashes = stash list
   remotes = remote -v
-  showlast = show HEAD
+  showlast = show HEAD --color
   showstash = stash show -p
   g = grep -n
 
