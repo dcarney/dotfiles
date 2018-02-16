@@ -122,23 +122,14 @@ cabbrev ws %s/\s\+$//g
 "        use w/ other tools. (qj == Quote Json)
 cabbrev qj :%s@\([A-Za-z_]\+\):@"\1":@gc
 
-" :GG to run a `git grep` on the current working tree
+" :Ggr to run a 'git grep' on the current working tree (uses the :Ggrep
+" command from the fugitive plugin)
 " "silent" makes the cmd bypass the shell's "Hit ENTER to continue" prompt
 " "cw" opens the results in the quickfix window
-" func GitGrep(...)
-"   let save = &grepprg
-"   set grepprg=git\ grep\ -n\ $*
-"   let s = 'grep'
-"   for i in a:000
-"     let s = s . ' ' . i
-"   endfor
-"   exe s
-"   let &grepprg = save
-" endfun
-" command -nargs=? GG silent call GitGrep(<f-args>) | cw
+command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | cw 25 | redraw!
 
-" let :gg do the same thing as the above
-" cabbrev gg GG
+" let gr run the above command, with whatever word is under the cursor!
+nnoremap gr :Ggr "\<<cword>\>" *<CR>
 
 " ----------------------------------------------------------------------------
 "  move between panes using vim movement (Ctrl + j, etc.)
@@ -236,8 +227,10 @@ Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " indent by filetype - required!
