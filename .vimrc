@@ -95,9 +95,9 @@ nnoremap <C-h> :nohlsearch<return>
 
 let mapleader = "\<Space>"
 
-" save buffer
+" save buffer with <space>w or <space><space>
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>wq :wq<CR>
+nnoremap <Leader><Leader> :w<CR>
 
 " enter visual mode
 nmap <Leader><Leader> V
