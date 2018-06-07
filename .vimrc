@@ -4,6 +4,7 @@
 syntax enable       " Set syntax highlighting to always on
 filetype on         " Set automatic filetype detection to on
 set hlsearch        " Show highlighting on search matches
+set incsearch       " Show search matches while typing
 set vb              " set visualbell, to silence the annoying audible bell
 colorscheme molokai
 set fileencodings=utf-8
