@@ -41,6 +41,7 @@ alias idgaf="echo \"¯\_(ツ)_/¯\""
 alias buildin="echo '\nᕕ( ᐛ )ᕗ  buildin...\n'; ./deploy"
 alias proc_on_port="sudo netstat -nlp | grep"
 alias open='xdg-open'
+alias ipaddr='ip addr show eth0 | grep -o -E "inet\ [0-9\.]+" | cut -d" " -f2'
 
 alias epoch='date +%s'
 
