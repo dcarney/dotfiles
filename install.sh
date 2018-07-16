@@ -148,6 +148,14 @@ install_dotfiles () {
     link_file "${PWD}/$src" "$dst"
   done
 
+  # link all the files in ./bin to ~/bin
+  mkdir -p "${HOME}/bin"
+  for src in $(find $PWD/bin/ -type f -printf '%p\n')
+  do
+    dst="${HOME}/bin/$(basename ${src})"
+    link_file "$src" "$dst"
+  done
+
   # link in any file that matches *.zsh
   for src in $(find -H $PWD -maxdepth 2 -name '*.zsh')
   do

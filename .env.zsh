@@ -46,6 +46,9 @@ export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
 export EDITOR=vim
 export GUI_EDITOR=mvim
 
+# where I keep all my "did" files for task tracking
+export DID_HOME="$HOME/src/did"
+
 # golang
 export GOROOT=/usr/local/go
 export GOPATH="$HOME/go"

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+# Uses vim and a set of markdown files for simple task tracking.
+# Inspired by: https://theptrk.com/2018/07/11/did-txt-file/
+#
+
+# determine the path to the current day's file, creating any necessary parent
+# dirs
+YEAR=$(date +"%Y")
+MONTH=$(date +"%m-%b")
+CURRENT_DIR="${DID_HOME}/${YEAR}/${MONTH}"
+mkdir -p $CURRENT_DIR
+
+FILE_PATH=$CURRENT_DIR/did.md
+CURRENT_DATE=$(date +"%a %d-%b-%Y")
+
+# Try to see if date was already written to file
+cat $FILE_PATH | grep "$CURRENT_DATE" > /dev/null
+status=$?
+
+if test $status -eq 0
+then
+	vim +'normal Go' $FILE_PATH
+else
+  # open the file, moving to the bottom of the file and adding a formatted
+  # time/date stamp at the end
+  vim +'normal Go' +'r!date +"\# \%a \%d-\%b-\%Y"' $FILE_PATH
+fi
