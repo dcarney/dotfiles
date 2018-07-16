@@ -21,6 +21,7 @@ alias gdt='git difftool'
 alias ga='git add'
 alias gr='git checkout --'
 alias gprom='git pull --rebase origin master'
+alias gg='git grep -n'
 
 # locations
 alias src="cd $HOME/src"
