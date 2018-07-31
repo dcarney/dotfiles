@@ -43,6 +43,8 @@ alias proc_on_port="sudo netstat -nlp | grep"
 alias open='xdg-open'
 alias ipaddr='ip addr show eth0 | grep -o -E "inet\ [0-9\.]+" | cut -d" " -f2'
 
+# strips ANSI color codes from input
+alias strip_color='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 alias epoch='date +%s'
 
 alias slack="nohup docker run --rm -t \
