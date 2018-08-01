@@ -8,7 +8,8 @@
 #    if no dir is given for the volume mount argument, $PWD is used.
 function mitmproxy() {
   SAVEDIR=${1:-$PWD}
-  docker run --rm --name mitmproxy -p 8080:8080 -v $SAVEDIR:/tmp/mitm -it mitmproxy mitmproxy
+  docker run --rm --name mitmproxy --net=host -p 8080:8080 -e "EDITOR=vim" -v $SAVEDIR:/tmp/mitm -v $HOME/.mitmproxy:/home/mitmproxy/.mitmproxy -it mitmproxy/mitmproxy
+}
 }
 
 
