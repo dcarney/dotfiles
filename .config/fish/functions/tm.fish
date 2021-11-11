@@ -1,0 +1,4 @@
+function tm
+  echo ™
+end
+
