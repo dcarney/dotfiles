@@ -9,6 +9,7 @@ set vb              " set visualbell, to silence the annoying audible bell
 colorscheme molokai
 set fileencodings=utf-8
 set encoding=utf-8
+set backspace=indent,eol,start " fix backspace deletion behavior on OSX
 
 " ----------------------------------------------------------------------------
 "  Text Formatting
@@ -52,11 +53,14 @@ set ls=2                    " Always show status bar
 " double-backtick activates the scratch.vim plugin in visual and normal modes
 nnoremap `` :Sscratch<CR>
 vnoremap `` :Sscratch<CR>
-map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
+
+" NERDTree config
+map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
 
 " show hidden files by default
 let NERDTreeShowHidden=1
+cabbrev NF NERDTreeFind
 
 " ctrlp plugin config
 let g:ctrlp_map = '<c-p>'
@@ -162,6 +166,10 @@ noremap <Right> <NOP>
 " imap <down> <NOP>
 " imap <left> <NOP>
 " imap <right> <NOP>
+
+" jump 10 lines if the Shift key is down
+nnoremap J 10j
+nnoremap K 10k
 
 " ----------------------------------------------------------------------------
 "  golang configs
