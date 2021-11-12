@@ -1,0 +1,118 @@
+{
+    "update.mode": "none",
+    "editor.minimap.enabled": false,
+    "gulp.autoDetect": "off",
+    "grunt.autoDetect": "off",
+    "explorer.openEditors.visible": 0,
+    "explorer.decorations.colors": false,
+    "explorer.compactFolders": false,
+    "workbench.tree.indent": 24,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 10000,
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.tree.renderIndentGuides": "always",
+    "go.toolsManagement.autoUpdate": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "5",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "5",
+                "k"
+            ]
+        },
+        {
+            "before": [
+                "<C-w>",
+                "_"
+            ],
+            "commands": [
+                "workbench.action.splitEditorOrthogonal"
+            ]
+        },
+        {
+            "before": [
+                "<C-w>",
+                "|"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w",
+                "s"
+            ],
+            "commands": [
+                "editor.action.trimTrailingWhitespace"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "r"
+            ],
+            "commands": [
+                "references-view.findReferences"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f",
+                "i"
+            ],
+            "commands": [
+                "references-view.findImplementations"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "t"
+            ],
+            "commands": [
+                "go.test.cursor"
+            ]
+        }
+    ],
+    "go.alternateTools": {},
+    "update.channel": "none",
+    "security.workspace.trust.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "go.buildOnSave": "off",
+    "go.coverOnTestPackage": false,
+    "go.lintOnSave": "file",
+    "go.enableCodeLens": {
+        "runtest": false
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "scm.countBadge": "off",
+    "scm.diffDecorationsGutterAction": "none",
+    "scm.diffDecorationsGutterVisibility": "hover",
+    "git.showCommitInput": false,
+    "git.untrackedChanges": "hidden",
+    "git.autorefresh": false,
+    "git.autoRepositoryDetection": false,
+    "editor.codeActionsOnSave": null,
+    "telemetry.enableTelemetry": false
+}
