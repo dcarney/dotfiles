@@ -1,0 +1,23 @@
+# Use a 72 hour server timeout, so that the bazel server
+# doesn't shut down all the time (the default is 3 hours)
+startup --max_idle_secs=259200
+
+# By default, failing tests don't print any output, it's logged to a
+# file instead, and it's annoying as hell.
+#
+# https://docs.bazel.build/versions/main/command-line-reference.html#flag--test_output
+# > Specifies desired output mode. Valid values are 'summary' to output only test
+# > status summary, 'errors' to also print test logs for failed tests, 'all' to
+# > print logs for all tests and 'streamed' to output logs for all tests in real
+# > time (this will force tests to be executed locally one at a time regardless
+# > of --test_strategy value).
+test --test_output=errors
+
+# ensure that the bazel-created dirs like "bazel-out" and "bazel-testlogs", etc.
+# start with an underscore, so that gopls ignores them.
+# build --symlink_prefix=_bazel_
+# test  --symlink_prefix=_bazel_
+
+# Also suppress the generation of the bazel-out symlink, which always appears,no
+# matter what you set --symlink_prefix to.
+# build --experimental_no_product_name_out_symlink
