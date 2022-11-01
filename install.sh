@@ -108,15 +108,13 @@ link_file () {
   fi
 }
 
-TOLINK=(.tmux.conf .vimrc .vim .gitconfig .zshrc .oh-my-zsh/themes/dcarney.zsh-theme .i3/config .i3status.conf .xmodmap .xinitrc .Xresources .config/dunst/dunstrc .fontconfig)
+TOLINK=(.tmux.conf .vimrc .vim .gitconfig .config/fish) 
 
 install_dotfiles () {
   info 'installing dotfiles'
 
   # create a few dirs that need to exist
-  mkdir -p "${HOME}/.i3"
   mkdir -p "${HOME}/.vim/bundle"
-  mkdir -p "${HOME}/.config/dunst"
 
   # clone a few repos if they don't already exist
   dst="${HOME}/.vim/bundle/Vundle.vim"
@@ -127,16 +125,6 @@ install_dotfiles () {
   else
     info "installing vundle..."
     git clone https://github.com/gmarik/Vundle.vim.git "${HOME}/.vim/bundle/Vundle.vim"
-  fi
-
-  dst="${HOME}/.oh-my-zsh"
-  info "checking for oh-my-zsh at $dst..."
-  if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
-  then
-    success "oh-my-zsh already installed"
-  else
-    info "installing oh-my-zsh..."
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   fi
 
   local overwrite_all=false backup_all=false skip_all=false
@@ -163,9 +151,6 @@ install_dotfiles () {
     link_file "$src" "$dst"
   done
 
-  # other links
-  mkdir -p ~/.config/fontconfig
-  link_file "${HOME}/.fontconfig" "${HOME}/.config/fontconfig/fonts.conf"
 }
 
 install_dotfiles
