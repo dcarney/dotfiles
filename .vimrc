@@ -6,7 +6,7 @@ filetype on         " Set automatic filetype detection to on
 set hlsearch        " Show highlighting on search matches
 set incsearch       " Show search matches while typing
 set vb              " set visualbell, to silence the annoying audible bell
-colorscheme molokai
+colorscheme monokai
 set fileencodings=utf-8
 set encoding=utf-8
 set backspace=indent,eol,start " fix backspace deletion behavior on OSX
@@ -21,6 +21,8 @@ set ts=2                   " 2 space 'tabs'
 set shiftwidth=2           " 2 space indentations
 set expandtab              " expand tabs to spaces
 set nosmarttab             " tabs are dumb
+set noshowmatch            " prevent the cursor from jumping around when
+                           " typing opening/closing brackets
 
 " Highlight trailing whitespace in red:
 "   - create color scheme to use to highlight trailing whitespace in red
@@ -51,9 +53,9 @@ set ls=2                    " Always show status bar
 " misc plugin configs
 " ----------------------------------------------------------------------------
 " double-backtick activates the scratch.vim plugin in visual and normal modes
-nnoremap `` :Sscratch<CR>
-vnoremap `` :Sscratch<CR>
-nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
+" nnoremap `` :Sscratch<CR>
+" vnoremap `` :Sscratch<CR>
+" nmap <F8> :TagbarToggle<CR>   " Tagbar plugin shortcut
 
 " NERDTree config
 map <F2> :NERDTreeToggle<CR>  " NERDTree plugin shortcut
@@ -77,16 +79,16 @@ let g:ctrlp_working_path_mode = ''
 let g:ctrlp_root_markers = ['src']
 
 " Start interactive vim-easy-align in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+" xmap ga <Plug>(EasyAlign)
 
 " Start interactive vim-easy-align for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+" nmap ga <Plug>(EasyAlign)
 
 " enable markdown highlighting
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " don't snow the scratch preview window for autocompletion
-set completeopt-=preview
+" set completeopt-=preview
 
 " ----------------------------------------------------------------------------
 " key mappings / command abbrevs / custom functions
@@ -97,14 +99,14 @@ nnoremap <F5> :buffers<CR>:buffer<Space>
 " hitting <Ctrl+h> clears last search highlighting
 nnoremap <C-h> :nohlsearch<return>
 
-let mapleader = "\<Space>"
+" let mapleader = "\<Space>"
 
 " save buffer with <space>w or <space><space>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader><Leader> :w<CR>
+" nnoremap <Leader>w :w<CR>
+" nnoremap <Leader><Leader> :w<CR>
 
 " enter visual mode
-nmap <Leader><Leader> V
+" nmap <Leader><Leader> V
 
 " yank/paste to system clipboard (assuming your vim supports it)
 vmap <Leader>y "+y
@@ -182,11 +184,24 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 cabbrev def GoDef
 
-let $GOPATH = "/home/dcarney/go"
-let $GOROOT = "/usr/local/go"
+let $GOPATH = "/Users/dcarney/go"
+" let $GOROOT = "/usr/local/go"
+
+" Go syntax highlighting
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
 
 " let goimports handle inserting import paths
+let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
+
+" Use gopls for the langauge server
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " ctrlp plugin default mappings
 let g:ctrlp_map = '<c-p>'
@@ -198,14 +213,6 @@ let g:ctrlp_cmd = 'CtrlP'
 " user 4-space indents for javascript/json files
 autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4
 autocmd FileType json setlocal shiftwidth=4 softtabstop=4
-
-" :set conceallevel=2 to replace "function" with "ƒ", etc.
-let g:javascript_conceal_function = "ƒ"
-
-" jsdoc.vim plugin settings
-" allow interactive prompting for fn descriptions and types
-let g:jsdoc_allow_input_prompt = 1
-let g:jsdoc_input_description = 1
 
 " ----------------------------------------------------------------------------
 " Macros
@@ -234,11 +241,10 @@ Plugin'gmarik/Vundle.vim'
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'git://github.com/mkitt/tabline.vim.git'
 Plugin 'git://github.com/fatih/vim-go.git'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-fugitive'
 call vundle#end()
