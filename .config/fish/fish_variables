@@ -1,9 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_apiori:cd\x20\x24HOME/stripe/apiori
-SETUVAR _fish_abbr_bb:\x2e/bazel\x20build
-SETUVAR _fish_abbr_bt:\x2e/bazel\x20test\x20\x2d\x2dtest_output\x3dstreamed
+SETUVAR _fish_abbr_bb:bazel\x20build
+SETUVAR _fish_abbr_bt:bazel\x20test\x20\x2d\x2dtest_output\x3dstreamed\x20\x2d\x2dtest_arg\x3d\x2dtest\x2ev
 SETUVAR _fish_abbr_epoch:date\x20\x22\x2b\x25s\x22
 SETUVAR _fish_abbr_f:d
 SETUVAR _fish_abbr_g:git
@@ -18,7 +18,6 @@ SETUVAR _fish_abbr_gss:git\x20ss
 SETUVAR _fish_abbr_inst:go\x20install\x20\x2dv\x20\x2e/\x2e\x2e\x2e
 SETUVAR _fish_abbr_notes:nvim\x20\x7e/tmp/notes\x2emd
 SETUVAR _fish_abbr_nv:nvim
-SETUVAR _fish_abbr_ssh:ssh\x2dyubikey
 SETUVAR _fish_abbr_untar:tar\x20xvfz
 SETUVAR fish_color_autosuggestion:586e75
 SETUVAR fish_color_cancel:\x2dr
@@ -49,4 +48,5 @@ SETUVAR fish_pager_color_completion:B3A06D
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/usr/local/opt/fzf/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/opt/homebrew/opt/go\x401\x2e17/bin\x1e/usr/local/opt/fzf/bin
