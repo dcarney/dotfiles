@@ -5,10 +5,12 @@
 [alias]
   unstage = reset HEAD
   # pretty history
-  hist = log --pretty=format:\"%Cgreen%h%Creset %ad | %s%d [%Cred%an%Creset]\" --graph --date=iso
+  hist = log --pretty=format:\"%Cgreen%h%Creset %ad | %s%d [%Cred%an%Creset]\" --graph --date=iso-local
+  lastsha = log -1 --format=format:%H
+  shas = log --format=format:%H
   go = checkout
   undopush = push -f origin HEAD^:master
-  s = status
+  s = status --untracked-files=all
   ss = status -s --untracked-files=no # short status
   d = diff
   dc = diff --cached
@@ -25,6 +27,8 @@
   showlast = show HEAD --color
   showstash = stash show -p
   g = grep -n
+  thisbranch = rev-parse --abbrev-ref HEAD
+  currentbranch = rev-parse --abbrev-ref HEAD
 
   # @{u} means 'upstream', aka origin/foobar if you're on the 'foobar' branch
   unpushed = log @{u}..HEAD --pretty=format:\"%Cgreen%h%Creset %ad | %s%d [%Cred%an%Creset]\" --graph --date=short
@@ -46,3 +50,6 @@
   default = upstream
 [user]
 	name = Dylan Carney
+	email = dcarney@stripe.com
+#[url "git@git.corp.stripe.com:"]
+  # insteadOf = https://git.corp.stripe.com
